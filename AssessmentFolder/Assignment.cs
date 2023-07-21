@@ -1,5 +1,5 @@
 ﻿using System;
-namespace TaskPlanner.BusinessLogic
+namespace TaskPlanner.AssessmentFolder
 {
 	public class Assignment
 	{

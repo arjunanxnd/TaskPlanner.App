@@ -56,15 +56,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="AssessmentFolder\" />
 	  <None Remove="NotificationFolder\" />
 	  <None Remove="GeneralFolder\" />
 	  <None Remove="UserFolder\" />
+	  <None Remove="AssessmentFolder\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="AssessmentFolder\" />
 	  <Folder Include="NotificationFolder\" />
 	  <Folder Include="GeneralFolder\" />
 	  <Folder Include="UserFolder\" />
+	  <Folder Include="AssessmentFolder\" />
 	</ItemGroup>
 </Project>
