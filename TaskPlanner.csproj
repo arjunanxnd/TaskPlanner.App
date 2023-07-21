@@ -55,4 +55,16 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="AssessmentFolder\" />
+	  <None Remove="NotificationFolder\" />
+	  <None Remove="GeneralFolder\" />
+	  <None Remove="UserFolder\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="AssessmentFolder\" />
+	  <Folder Include="NotificationFolder\" />
+	  <Folder Include="GeneralFolder\" />
+	  <Folder Include="UserFolder\" />
+	</ItemGroup>
 </Project>
