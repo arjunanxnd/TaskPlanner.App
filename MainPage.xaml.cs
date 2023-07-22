@@ -2,8 +2,6 @@
 
 public partial class MainPage : ContentPage
 {
-	
-
 	public MainPage()
 	{
 		InitializeComponent();
@@ -11,7 +9,7 @@ public partial class MainPage : ContentPage
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
-		
+		//Digaant Dogra has it
 	}
 }
 
