@@ -9,6 +9,8 @@
             Padding="30,0"
             VerticalOptions="Center">
 
+            <Button Text="Test"
+                    Clicked="TestClicked"/>
            
             
 

@@ -7,9 +7,10 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		//Digaant Dogra has it
-	}
+	
+    void TestClicked(System.Object sender, System.EventArgs e)
+    {
+		DisplayAlert("Just testing", "???", "Ok");
+    }
 }
 
