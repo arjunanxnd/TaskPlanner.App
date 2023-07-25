@@ -8,5 +8,24 @@ namespace TaskPlanner.Business_Logic
 {
     class Assignment
     {
+        private List<Assignment> _assignments = new List<Assignment>();
+        public List<Assignment> Assignments { get { return _assignments; } }
+
+        public override void AddAssessment(Assignment assignment)
+        {
+            _assignments.Add(assignment);
+        }
+
+        public override void DeleteAssessment(Assignment assignment)
+        {
+            foreach(Assignment var in _assignments)
+            {
+                if (assignment.DueDate == var.DueDate)
+                    _assignments.Remove(assignment);
+            }
+        }
+
+
+
     }
 }
