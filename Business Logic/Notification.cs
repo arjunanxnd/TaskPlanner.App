@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskPlanner.Business_Logic
 {
-    class Notification
+    public class Notification
     {
     }
 }

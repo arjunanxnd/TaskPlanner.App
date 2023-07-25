@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TaskPlanner.Business_Logic
 {
-    class General
+    public class General
     {
+        List<General> _general = new List<General>();
+        public DateTime WorkDate  { get; set; }
+        public string GeneralDesc { get; set; }
+        public string Note { get; set; }
+        public List<General> SelectedGeneral { get { return _general; }}
     }
 }
