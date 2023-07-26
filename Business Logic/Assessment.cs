@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace TaskPlanner.Business_Logic
 {
-    class Assessment
+    public abstract class Assessment
     {
+        public string Subject { get; set; }
+        public string Description { get; set; }
+        public DateTime DueDate { get; set; }
+
+        public Assessment(string subject, string description)
+        {
+            Subject = subject;
+            Description = description;
+        }
+
+        public abstract void AddAssesment();
+
+        public abstract void UpdateAssesment();
+
+        public abstract void DeleteAssesment();
     }
 }
