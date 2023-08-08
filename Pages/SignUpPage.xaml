@@ -5,8 +5,36 @@
              Title="SignUpPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="TMS"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand"
+            FontAttributes="Bold"
+            FontSize="35"/>
+
+        <Label
+            Text="Sign-Up"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="Start"
+            FontSize="Header"
+            />
+        <Entry
+            Placeholder="First And Last Name"
+            HorizontalOptions="Start"
+            />
+        <Entry
+            Placeholder="Email"
+            HorizontalOptions="Start"
+            />
+        <Entry
+            Placeholder="Username"
+            HorizontalOptions="Start"
+            />
+
+        <Button
+            x:Name="ToPsswrdPgBtn"
+            Text="OK"
+            Clicked="ToPsswrdPgBtn_Clicked"
+            />
+
     </VerticalStackLayout>
 </ContentPage>

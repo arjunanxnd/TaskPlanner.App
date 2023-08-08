@@ -5,8 +5,42 @@
              Title="LoginPage">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Welcome To TMS"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand"
+            FontSize="30"
+            FontAttributes="Bold"/>
+
+        <Label
+            Text="Login"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="Start"
+            FontSize="15"
+            />
+        <Entry
+            Text="Username"
+            HorizontalOptions="Start"
+            />
+        <Entry
+            Text="Password"
+            HorizontalOptions="Start"
+            />
+
+        <HorizontalStackLayout
+            Grid.ColumnSpan="3"
+            Grid.Row="6"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Button
+                x:Name="SignUpBtn"
+                Text="Sign Up"
+                Clicked="SignUpBtn_Clicked"
+            />
+            <Button
+                x:Name="LoginSucsflBtn"
+                Text="OK"
+                Clicked="LoginSucsflBtn_Clicked"
+            />
+            </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

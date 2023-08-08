@@ -6,4 +6,9 @@ public partial class PasswordPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    void ToHomePgBtn_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Navigation.PopAsync(HomePage);
+    }
 }
