@@ -8,5 +8,15 @@ namespace TaskPlanner.Data_Access
 {
     public class JSONDataManager
     {
+        string _fileName;
+        public JSONDataManager(string fileName)
+        {
+            _fileName = fileName;
+        }
+        
+        public void WriteUserInformation()
+        {
+
+        }
     }
 }
