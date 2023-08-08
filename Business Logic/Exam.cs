@@ -12,6 +12,12 @@ namespace TaskPlanner.Business_Logic
     {
         private List<Exam> _exam = new List<Exam>();
         public List<Exam> Exams { get { return _exam; } }
+        public enum ExamType
+        {
+            FinalExam,
+            Quiz,
+            MidTerms
+        }
 
         public override void AddAssesment(Exam exam)
         {

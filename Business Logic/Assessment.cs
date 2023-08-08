@@ -12,6 +12,12 @@ namespace TaskPlanner.Business_Logic
         public string Description { get; set; }
         public DateTime DueDate { get; set; }
 
+        enum TypeOfAssessment
+        {
+            Exam,
+            Assignment
+        }
+
         public Assessment(string subject, string description)
         {
             Subject = subject;
