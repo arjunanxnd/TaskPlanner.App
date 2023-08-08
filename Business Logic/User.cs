@@ -15,9 +15,7 @@ namespace TaskPlanner.Business_Logic
 
         private int _userId;
         private string _password;
-        private List<User> _users = new List<User>();
         private string _email;
-        private List<string> _subject = new List<string>();
 
         public User(string userName, string firstAndLast, string email, string password)
         {
@@ -31,7 +29,6 @@ namespace TaskPlanner.Business_Logic
         public string FirstAndLastName { get; set; }
         public string Password { get { return _password; } set { _password = value; } }
         public string E_mail { get { return _email; } set { if (value.Contains("@gmail.com")) _email = value; } }
-        public List<string> Subjects { get { return _subject; } set { _subject = value; } }
 
         public List<Exam> ExamList { get { return _exam.Exams; }  }
         public List<Assignment> AssignmentList { get { return _assignment.Assignments; }  }

@@ -20,13 +20,16 @@
         <Label Text="             " FontSize="30"/>
 
         <Entry
-            Text="Username"
-            HorizontalOptions="Start"
+            Placeholder="Username"
+            HorizontalOptions="Center"
             />
+                <Label Text="             " FontSize="10"/>
+
         <Entry
-            Text="Password"
-            HorizontalOptions="Start"
+            Placeholder="Password"
+            HorizontalOptions="CenterAndExpand"
             />
+                <Label Text="             " FontSize="30"/>
 
         <HorizontalStackLayout
             Grid.ColumnSpan="3"
