@@ -6,17 +6,19 @@
     <VerticalStackLayout>
         <Label 
             Text="Welcome To TMS"
-            VerticalOptions="CenterAndExpand" 
             HorizontalOptions="CenterAndExpand"
             FontSize="30"
             FontAttributes="Bold"/>
 
+        <Label Text="             " FontSize="40"/>
         <Label
             Text="Login"
             VerticalOptions="StartAndExpand"
-            HorizontalOptions="Start"
-            FontSize="15"
+            HorizontalOptions="Center"
+            FontSize="23"
             />
+        <Label Text="             " FontSize="30"/>
+
         <Entry
             Text="Username"
             HorizontalOptions="Start"

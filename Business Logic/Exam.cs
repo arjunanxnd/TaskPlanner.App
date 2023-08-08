@@ -6,32 +6,37 @@ using System.Threading.Tasks;
 
 namespace TaskPlanner.Business_Logic
 {
-    public class Exam
+    public enum ExamType
     {
-        class Exam : Assessment
+        FinalExam,
+        Quiz,
+        MidTerms
+    }
+
+    public class Exam : Assessment
+    {
+        private List<Exam> _exam;
+        public List<Exam> Exams { get { return _exam; } }
+        public ExamType Etype { get; set; }
+
+        public Exam()
         {
-            private List<Exam> _exam = new List<Exam>();
-            public List<Exam> Exams { get { return _exam; } }
-            public enum ExamType
-            {
-                FinalExam,
-                Quiz,
-                MidTerms
-            }
+            _exam = new List<Exam>();
+        }
 
-            public override void AddAssesment(Exam exam)
-            {
-                _exam.Add(exam);
-            }
+        public void AddExam(Exam exam)
+        {
+            _exam.Add(exam);
+        }
 
-            public override void DeleteAssesment(Exam exam)
+        public void DeleteExam(Exam exam)
+        {
+            foreach (Exam dt in _exam)
             {
-                foreach (Exam dt in _exam)
-                {
-                    if (exam.DueDate == dt.DueDate)
-                        _exam.Remove(exam);
-                }
+                if (exam.DueDate == dt.DueDate && exam.Etype == dt.Etype)
+                    _exam.Remove(exam);
             }
         }
+
     }
 }

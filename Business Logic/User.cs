@@ -33,9 +33,9 @@ namespace TaskPlanner.Business_Logic
         public string E_mail { get { return _email; } set { if (value.Contains("@gmail.com")) _email = value; } }
         public List<string> Subjects { get { return _subject; } set { _subject = value; } }
 
-        public List<Exam> ExamList { get { return _exam.Exams; } set { _exam.Exams = value; } }
-        public List<Assignment> AssignmentList { get { return _assignment.Assignments; } set { _assignment.Assignments=value; } }
-        public List<General> GeneralList { get { return _general.General; } set { _general.General = value; } }
+        public List<Exam> ExamList { get { return _exam.Exams; }  }
+        public List<Assignment> AssignmentList { get { return _assignment.Assignments; }  }
+        public List<General> GeneralList { get { return _general.Generals; }  }
 
         public List<User> Users { get { return _users; } }
 
