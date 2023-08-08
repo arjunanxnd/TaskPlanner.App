@@ -8,26 +8,33 @@ namespace TaskPlanner.Business_Logic
 {
     public class General
     {
-        private List<General> _generalList = new List<General>();
-        public DateTime WorkDate  { get; set; }
-        public string GeneralDesc { get; set; }
+        public DateTime WorkDate { get; set; }
+        public string GeneralDec { get; set; }
         public string Note { get; set; }
-        public List<General> AccessGeneral { get { return _generalList; }}
 
-        public override void AddGeneral(General general)
+        public List<General> _generals;
+        public List<General> Generals { get { return _generals; } }
+
+        public General()
         {
-            _generalList.Add(general);
+            _generals = new List<General>();
         }
 
-        public override void DeleteGeneral(General general)
+        public void AddGeneral(General general)
         {
-            foreach(General _general in _generalList)
+            _generals.Add(general);
+        }
+
+        public void DeleteGeneral(General general)
+        {
+            foreach (General current in _generals)
             {
-                if (general == _general)
+                if (current.WorkDate == general.WorkDate && general.GeneralDec.ToLower() == current.GeneralDec.ToLower())
                 {
-                    _generalList.Remove(general);
+                    _generals.Remove(general);
                 }
             }
         }
+
     }
 }
