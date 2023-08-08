@@ -12,7 +12,6 @@ namespace TaskPlanner.Business_Logic
         private Exam _exam;
         private General _general;
 
-
         private int _userId;
         private string _password;
         private string _email;
@@ -34,67 +33,24 @@ namespace TaskPlanner.Business_Logic
         public List<Assignment> AssignmentList { get { return _assignment.Assignments; }  }
         public List<General> GeneralList { get { return _general.Generals; }  }
 
-        public List<User> Users { get { return _users; } }
+        //public List<User> Users { get { return _users; } }
 
-        public void AddUser(User user)
+
+        public void UpdateUserpassword(User user,string pass)
         {
-            _users.Add(user);
+            user.Password = pass;
         }
 
-        public void UpdateUsername(string rename)
+        public void UpdateUserName(User user,string userName)
         {
-            foreach (User user1 in _users)
-            {
-                if (user1._userId == this._userId)
-                {
-                    user1.UserName = rename;
-                }
-            }
+            user.UserName = userName;
         }
 
-        public void UpdateUseremail(string remail)
+        public void UpdateFirstAndLast(User user, string FAndL)
         {
-            foreach (User user1 in _users)
-            {
-                if (user1._userId == this._userId)
-                {
-                    user1._email = remail;
-                }
-            }
+            user.FirstAndLastName = FAndL;
         }
 
-        public void UpdateUserpassword(string pass)
-        {
-            foreach (User user1 in _users)
-            {
-                if (user1._userId == this._userId)
-                {
-                    user1._password = pass;
-                }
-            }
-        }
-
-        public void AddSubject(string sub)
-        {
-            foreach (User user1 in _users)
-            {
-                if (user1._userId == this._userId)
-                {
-                    user1._subject.Add(sub);
-                }
-            }
-        }
-
-        public void RemoveSubject(string sub)
-        {
-            foreach (User user1 in _users)
-            {
-                if (user1._userId == this._userId)
-                {
-                    user1._subject.Remove(sub);
-                }
-            }
-        }
 
     }
 }

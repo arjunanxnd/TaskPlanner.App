@@ -41,9 +41,10 @@
                 Text="Sign Up"
                 Clicked="SignUpBtn_Clicked"
             />
+            <Label Text="           "/>
             <Button
                 x:Name="LoginSucsflBtn"
-                Text="OK"
+                Text="Log-in"
                 Clicked="LoginSucsflBtn_Clicked"
             />
             </HorizontalStackLayout>

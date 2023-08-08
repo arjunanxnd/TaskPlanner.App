@@ -10,29 +10,38 @@
             HorizontalOptions="CenterAndExpand"
             FontAttributes="Bold"
             FontSize="35"/>
+                <Label Text="             " FontSize="30"/>
 
         <Label
             Text="Sign-Up"
             VerticalOptions="StartAndExpand"
-            HorizontalOptions="Start"
-            FontSize="Header"
-            />
+            HorizontalOptions="CenterAndExpand"
+            FontSize="23"
+            />        <Label Text="             " FontSize="15"/>
+
         <Entry
             Placeholder="First And Last Name"
-            HorizontalOptions="Start"
+            HorizontalOptions="CenterAndExpand"
             />
+                <Label Text="             " FontSize="5"/>
+
         <Entry
             Placeholder="Email"
-            HorizontalOptions="Start"
+            HorizontalOptions="Center"
             />
+                <Label Text="             " FontSize="5"/>
+
         <Entry
             Placeholder="Username"
-            HorizontalOptions="Start"
+            HorizontalOptions="CenterAndExpand"
             />
+                <Label Text="             " FontSize="20"/>
+
 
         <Button
             x:Name="ToPsswrdPgBtn"
-            Text="OK"
+            Text="Next"
+            HorizontalOptions="Center"
             Clicked="ToPsswrdPgBtn_Clicked"
             />
 
