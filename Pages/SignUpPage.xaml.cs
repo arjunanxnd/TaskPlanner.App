@@ -20,7 +20,6 @@ public partial class SignUpPage : ContentPage
         string password = await DisplayPromptAsync("Password", "Please remember your password!");
         _user = new User(uName, firstALast, email, password);
 
-        _repository.
 
         await Shell.Current.GoToAsync("//Home");
     }
