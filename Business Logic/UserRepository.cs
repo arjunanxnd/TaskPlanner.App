@@ -9,8 +9,13 @@ namespace TaskPlanner.Business_Logic
 {
     public class UserRepository
     {
-        List<User> _users = new List<User>();
+        List<User> _users;
         public List<User> Users { get {  return _users; } }
+
+        public UserRepository()
+        {
+            _users = new List<User>();
+        }
 
         public void SaveUser(JSONDataManager dataManger)
         {

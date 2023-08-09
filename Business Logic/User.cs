@@ -8,7 +8,6 @@ namespace TaskPlanner.Business_Logic
 {
     public class User
     {
-
         private List<Assignment> _assignments;
         private List<Exam> _exams;
         public List<General> _generals;
