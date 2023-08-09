@@ -20,18 +20,21 @@
             />        <Label Text="             " FontSize="15"/>
 
         <Entry
+            x:Name="FirstALastEntry"
             Placeholder="First And Last Name"
             HorizontalOptions="CenterAndExpand"
             />
                 <Label Text="             " FontSize="5"/>
 
         <Entry
+            x:Name="EmailEntry"
             Placeholder="Email"
             HorizontalOptions="Center"
             />
                 <Label Text="             " FontSize="5"/>
 
         <Entry
+            x:Name="UsernameEntry"
             Placeholder="Username"
             HorizontalOptions="CenterAndExpand"
             />
