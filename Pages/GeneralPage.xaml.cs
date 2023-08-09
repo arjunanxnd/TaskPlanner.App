@@ -5,7 +5,7 @@ public partial class GeneralPage : ContentPage
 	public GeneralPage()
 	{
 		InitializeComponent();
-	}
+    }
 
     private void OnClickAdd(object sender, EventArgs e)
     {

@@ -8,10 +8,9 @@ public partial class Home : ContentPage
 	{
 		InitializeComponent();
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
-        RemovePage();
     }
-        Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
-    }
+        
+    
 
 	/*public void SaveProducts(JSONDataManager dataManager)
 	{

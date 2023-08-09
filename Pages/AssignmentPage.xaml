@@ -3,10 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.AssignmentPage"
              Title="AssignmentPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <Grid
+            RowDefinitions="2*,*,*,*,*,2*"
+            ColumnDefinitions="*,3*">
+            <Label Text="Assignment"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   Grid.Column="0"
+                   FontSize="Header"/>
+
+            
+
+            <Entry x:Name="TitleEntry" 
+                       Grid.Row="1"
+                       Grid.Column="0" 
+                       Placeholder="Enter Title" 
+                       HorizontalOptions="FillAndExpand"/>
+
+
+            
+            <Entry x:Name="DescriptionEntry" 
+                        Grid.Column="1"
+                        Grid.Row="2"
+                       Placeholder="Enter Description" 
+                       HorizontalOptions="FillAndExpand"/>
+
+            <Label Text="Work DueDate"
+                       Grid.Column="0"
+                       Grid.Row="3"
+                       Style="{StaticResource FieldLabelStyle}"/>
+
+            <DatePicker x:Name="DueDatePick"
+                            Grid.Column="1"
+                            Grid.Row="4"/>
+
+            
+                <Button
+                x:Name="AddBtn"
+                Text="Add"
+                Clicked="OnClickAddAssignment"
+                HorizontalOptions="CenterAndExpand" 
+                VerticalOptions="CenterAndExpand"
+                Grid.Row="5"
+                />
+
+            <Label
+                Text="Please select the assignment you wish to Delete in the Picker"
+                Grid.Column="0"
+                Grid.Row="6"
+                />
+                <Picker
+                x:Name="AssignmentCategoryPicker"
+                SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
+                Grid.Column="1"
+                Grid.Row="6"/>
+                    
+                <Button
+            x:Name="DeleteBtn"
+            Text="Delete"
+            Clicked="OnClickDeleteAssignment"
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand"
+            Grid.Row="7"
+            />
+        </Grid>
+    </ScrollView>
 </ContentPage>
