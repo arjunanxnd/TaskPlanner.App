@@ -8,17 +8,16 @@ namespace TaskPlanner.Business_Logic
 {
     public class Assignment : Assessment
     {
-        private List<Assignment> _assignments;
-        public List<Assignment> Assignments { get { return _assignments; } }
-
-        public Assignment()
+        public Assignment(string subject, string description, DateTime dueDate)
         {
-            _assignments = new List<Assignment>();
+            Subject = subject;
+            Description = description;
+            DueDate = dueDate;
         }
 
         public void AddAssesment(Assignment assignment)
         {
-            _assignments.Add(assignment);
+            
         }
 
         public void DeleteAssessment(Assignment assignment) //have to make more stuff

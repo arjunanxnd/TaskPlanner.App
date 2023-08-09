@@ -4,9 +4,15 @@
              x:Class="TaskPlanner.Pages.GeneralPage"
              Title="GeneralPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Title"/>
+        <Entry x:Name="TitleEntry" Placeholder="Enter Title"/>
+
+        
+        <Label Text="Description"/>
+        <Entry x:Name="DescriptionEntry" Placeholder="Enter Description"/>
+
+        <Label Text="Work DueDate"/>
+        <DatePicker x:Name="DueDatePick"/>
+        
     </VerticalStackLayout>
 </ContentPage>

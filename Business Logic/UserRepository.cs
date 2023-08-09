@@ -12,12 +12,12 @@ namespace TaskPlanner.Business_Logic
         List<User> _users = new List<User>();
         public List<User> Users { get {  return _users; } }
 
-        public void SaveUser(IUserDataManger dataManger)
+        public void SaveUser(JSONDataManager dataManger)
         {
             dataManger.WriteUserInformation(Users);
         }
 
-        public void ReadUsers(IUserDataManger dataManager)
+        public void ReadUsers(JSONDataManager dataManager)
         {
             try
             {

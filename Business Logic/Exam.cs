@@ -15,13 +15,14 @@ namespace TaskPlanner.Business_Logic
 
     public class Exam : Assessment
     {
-        private List<Exam> _exam;
-        public List<Exam> Exams { get { return _exam; } }
         public ExamType Etype { get; set; }
 
-        public Exam()
+        public Exam(string subject, string description, DateTime dueDate, ExamType exam)
         {
-            _exam = new List<Exam>();
+            Subject = subject;
+            Description = description;
+            DueDate = dueDate;
+            Etype = exam;
         }
 
         public void AddExam(Exam exam)

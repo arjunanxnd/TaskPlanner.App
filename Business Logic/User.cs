@@ -8,6 +8,11 @@ namespace TaskPlanner.Business_Logic
 {
     public class User
     {
+
+        private List<Assignment> _assignments;
+        private List<Exam> _exams;
+
+
         private Assignment _assignment;
         private Exam _exam;
         private General _general;
@@ -22,6 +27,9 @@ namespace TaskPlanner.Business_Logic
             FirstAndLastName = firstAndLast;
             E_mail = email;
             Password = password;
+
+            _exams = new List<Exam>();
+            _assignments = new List<Assignment>();
         }
 
         public string UserName { get; set; }
@@ -29,8 +37,8 @@ namespace TaskPlanner.Business_Logic
         public string Password { get { return _password; } set { _password = value; } }
         public string E_mail { get { return _email; } set { if (value.Contains("@gmail.com")) _email = value; } }
 
-        public List<Exam> ExamList { get { return _exam.Exams; }  }
-        public List<Assignment> AssignmentList { get { return _assignment.Assignments; }  }
+        public List<Exam> ExamList { get { return _exams; }  }
+        public List<Assignment> AssignmentList { get { return _assignments; }  }
         public List<General> GeneralList { get { return _general.Generals; }  }
 
         //public List<User> Users { get { return _users; } }
@@ -51,6 +59,32 @@ namespace TaskPlanner.Business_Logic
             user.FirstAndLastName = FAndL;
         }
 
+        public void AddAssignment(Assignment assignment)
+        {
+            _assignments.Add(assignment);
+        }
+        public void DeleteAssessment(Assignment assignment) 
+        {
+            foreach (Assignment var in _assignments)
+            {
+                if (assignment.DueDate == var.DueDate && assignment.Description.ToLower() == var.Description.ToLower())
+                    _assignments.Remove(assignment);
+            }
+        }
+
+        public void AddExam(Exam exam)
+        {
+            _exams.Add(exam);
+        }
+
+        public void DeleteExam(Exam exam)
+        {
+            foreach (Exam dt in _exams)
+            {
+                if (exam.DueDate == dt.DueDate && exam.Etype == dt.Etype)
+                    _exams.Remove(exam);
+            }
+        }
 
     }
 }

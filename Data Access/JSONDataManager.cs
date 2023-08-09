@@ -8,7 +8,7 @@ using TaskPlanner.Business_Logic;
 
 namespace TaskPlanner.Data_Access
 {
-    public class JSONDataManager : IUserDataManger
+    public class JSONDataManager 
     {
         string _fileName;
         public JSONDataManager(string fileName)
