@@ -10,6 +10,8 @@ public partial class Home : ContentPage
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
         RemovePage();
     }
+        Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+    }
 
 	/*public void SaveProducts(JSONDataManager dataManager)
 	{
@@ -17,9 +19,9 @@ public partial class Home : ContentPage
 	}*/
         
     
+	//public void SaveProducts(JSONDataManager dataManager)
+	//{
+	//	dataManager.WriteUserInformation();
+	//}
 
-    private async void RemovePage()
-    {
-        Navigation.RemovePage(new LoginPage());
-    }
 }

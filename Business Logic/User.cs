@@ -8,15 +8,9 @@ namespace TaskPlanner.Business_Logic
 {
     public class User
     {
-
         private List<Assignment> _assignments;
         private List<Exam> _exams;
         public List<General> _generals;
-
-
-        private Assignment _assignment;
-        private Exam _exam;
-        private General _general;
 
         private int _userId;
         private string _password;
@@ -30,8 +24,10 @@ namespace TaskPlanner.Business_Logic
             Password = password;
             _exams = new List<Exam>();
             _assignments = new List<Assignment>();
+            _userId++;
         }
 
+        public int UserId { get { return _userId; } }
         public string UserName { get; set; }
         public string FirstAndLastName { get; set; }
         public string Password { get { return _password; } set { _password = value; } }
@@ -47,7 +43,6 @@ namespace TaskPlanner.Business_Logic
         {
             user.Password = pass;
         }
-
         public void UpdateUserName(User user,string userName)
         {
             user.UserName = userName;
@@ -59,50 +54,65 @@ namespace TaskPlanner.Business_Logic
             user.FirstAndLastName = FAndL;
         }
 
-        public void AddAssignment(Assignment assignment)
+        public void AddAssignment(Assignment assignment) //Add assignment obj in the list
         {
             _assignments.Add(assignment);
         }
         public void DeleteAssessment(Assignment assignment) 
         {
-            
-            foreach (Assignment var in _assignments)
+            DateTime date = assignment.DueDate;
+            string var = assignment.Description;
+            string sub = assignment.Subject;
+            for (int i = 0; i < _assignments.Count(); i++)
             {
-                if (assignment.DueDate == var.DueDate && assignment.Description.ToLower() == var.Description.ToLower())
+                if (assignment.DueDate == date && assignment.Subject == sub && assignment.Description == var)
+                {
                     _assignments.Remove(assignment);
+                    break;
+                }
             }
         }
 
         //exam
-        public void AddExam(Exam exam)
+        public void AddExam(Exam exam) //Add exam obj in the list
         {
             _exams.Add(exam);
         }
-
         public void DeleteExam(Exam exam)
         {
-            foreach (Exam dt in _exams)
+            DateTime date = exam.DueDate;
+            string var = exam.Description;
+            string sub = exam.Subject;
+            for (int i=0;i<_exams.Count();i++)
             {
-                if (exam.DueDate == dt.DueDate && exam.Etype == dt.Etype)
+                if (exam.DueDate == date && exam.Subject == sub && exam.Description == var)
+                {
                     _exams.Remove(exam);
+                    break;
+                }
             }
         }
 
         //general
-        public void AddGeneral(General general)
+        public void AddGeneral(General general) //Add general obj in the list
         {
             _generals.Add(general);
         }
-
         public void DeleteGeneral(General general)
         {
-            foreach (General current in _generals)
+            DateTime date = general.WorkDate;
+            string var = general.Description;
+            string title = general.Title;
+            for (int i = 0; i < _exams.Count(); i++)
             {
-                if (current.WorkDate == general.WorkDate && general.Title.ToLower() == current.Title.ToLower())
+                if (general.WorkDate == date && general.Title == title && general.Description == var)
                 {
                     _generals.Remove(general);
+                    break;
                 }
             }
         }
+
+
     }
 }
