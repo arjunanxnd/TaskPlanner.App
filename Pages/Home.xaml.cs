@@ -7,13 +7,12 @@ public partial class Home : ContentPage
 	public Home()
 	{
 		InitializeComponent();
-	}
-
-	public void SaveProducts(JSONDataManager dataManager)
-	{
-		dataManager.WriteUserInformation();
-	}
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
     }
+
+	//public void SaveProducts(JSONDataManager dataManager)
+	//{
+	//	dataManager.WriteUserInformation();
+	//}
 
 }
