@@ -9,7 +9,9 @@ public partial class LoginPage : ContentPage
 
     private async void LoginSucsflBtn_Clicked(System.Object sender, System.EventArgs e)
     {
-        
+        Home home = new Home();
+        await Shell.Current.GoToAsync("//Home");
+
     }
 
     private async void SignUpBtn_Clicked(System.Object sender, System.EventArgs e)

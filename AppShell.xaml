@@ -4,22 +4,23 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:TaskPlanner.Pages"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Disabled"
+    FlyoutIsPresented="{Binding IsFlyoutOpen}">
 
     <ShellContent
         Title="LoginPage"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage" FlyoutItemIsVisible="False"/>
 
-    <FlyoutItem Title="Home">
+        
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:Home}"
-            Route="Home"
+            Route="Home" FlyoutItemIsVisible="True"
             />
-    </FlyoutItem>
+    
 
-    <FlyoutItem Title="Assignment">
+    <FlyoutItem Title="Assignment" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:AssignmentPage}"
@@ -27,7 +28,7 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="Exam">
+    <FlyoutItem Title="Exam" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:ExamPage}"
@@ -35,7 +36,7 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="Setting">
+    <FlyoutItem Title="Setting" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:SettingsPage}"
@@ -43,7 +44,7 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="General">
+    <FlyoutItem Title="General" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:GeneralPage}"

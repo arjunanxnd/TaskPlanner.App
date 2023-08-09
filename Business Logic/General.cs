@@ -12,28 +12,11 @@ namespace TaskPlanner.Business_Logic
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public List<General> _generals;
-        public List<General> Generals { get { return _generals; } }
-
-        public General()
+        public General(string title, string description,DateTime workDate)
         {
-            _generals = new List<General>();
-        }
-
-        public void AddGeneral(General general)
-        {
-            _generals.Add(general);
-        }
-
-        public void DeleteGeneral(General general)
-        {
-            foreach (General current in _generals)
-            {
-                if (current.WorkDate == general.WorkDate && general.Title.ToLower() == current.Title.ToLower())
-                {
-                    _generals.Remove(general);
-                }
-            }
+            WorkDate = workDate;
+            Title = title;
+            Description = description;
         }
 
     }
