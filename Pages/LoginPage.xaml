@@ -4,6 +4,7 @@
              x:Class="TaskPlanner.Pages.LoginPage"
              Title="LoginPage">
     <VerticalStackLayout>
+        
         <Label 
             Text="Welcome To TMS"
             HorizontalOptions="CenterAndExpand"

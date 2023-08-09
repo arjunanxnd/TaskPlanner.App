@@ -25,19 +25,7 @@ namespace TaskPlanner.Business_Logic
             Etype = exam;
         }
 
-        public void AddExam(Exam exam)
-        {
-            _exam.Add(exam);
-        }
-
-        public void DeleteExam(Exam exam)
-        {
-            foreach (Exam dt in _exam)
-            {
-                if (exam.DueDate == dt.DueDate && exam.Etype == dt.Etype)
-                    _exam.Remove(exam);
-            }
-        }
+        
 
     }
 }

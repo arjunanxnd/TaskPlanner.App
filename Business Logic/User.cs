@@ -11,6 +11,7 @@ namespace TaskPlanner.Business_Logic
 
         private List<Assignment> _assignments;
         private List<Exam> _exams;
+        public List<General> _generals;
 
 
         private Assignment _assignment;
@@ -39,11 +40,10 @@ namespace TaskPlanner.Business_Logic
 
         public List<Exam> ExamList { get { return _exams; }  }
         public List<Assignment> AssignmentList { get { return _assignments; }  }
-        public List<General> GeneralList { get { return _general.Generals; }  }
+        public List<General> GeneralList { get { return _generals; } }
 
-        //public List<User> Users { get { return _users; } }
-
-
+        
+        //user
         public void UpdateUserpassword(User user,string pass)
         {
             user.Password = pass;
@@ -54,6 +54,7 @@ namespace TaskPlanner.Business_Logic
             user.UserName = userName;
         }
 
+        //assignment
         public void UpdateFirstAndLast(User user, string FAndL)
         {
             user.FirstAndLastName = FAndL;
@@ -72,6 +73,7 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
+        //exam
         public void AddExam(Exam exam)
         {
             _exams.Add(exam);
@@ -86,5 +88,21 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
+        //general
+        public void AddGeneral(General general)
+        {
+            _generals.Add(general);
+        }
+
+        public void DeleteGeneral(General general)
+        {
+            foreach (General current in _generals)
+            {
+                if (current.WorkDate == general.WorkDate && general.Title.ToLower() == current.Title.ToLower())
+                {
+                    _generals.Remove(general);
+                }
+            }
+        }
     }
 }

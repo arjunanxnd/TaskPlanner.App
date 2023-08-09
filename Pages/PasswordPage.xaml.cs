@@ -10,6 +10,6 @@ public partial class PasswordPage : ContentPage
     public async void ToHomePgBtn_Clicked(System.Object sender, System.EventArgs e)
     {
         Home home = new Home();
-        await Navigation.PushAsync(home);
+        await Shell.Current.GoToAsync("//Home");
     }
 }
