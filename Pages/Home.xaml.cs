@@ -14,11 +14,6 @@ public partial class Home : ContentPage
 		dataManager.WriteUserInformation();
 	}
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
-        RemovePage();
     }
 
-    private async void RemovePage()
-    {
-        Navigation.RemovePage(new LoginPage());
-    }
 }

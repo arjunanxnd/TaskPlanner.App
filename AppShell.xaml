@@ -12,13 +12,12 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" FlyoutItemIsVisible="False"/>
 
-        
-        <ShellContent
-            Title="Home"
-            ContentTemplate="{DataTemplate local:Home}"
-            Route="Home" FlyoutItemIsVisible="True"
-            />
-    
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:Home}"
+        Route="Home" FlyoutItemIsVisible="True"
+        />
 
     <FlyoutItem Title="Assignment" FlyoutItemIsVisible="True">
         <ShellContent

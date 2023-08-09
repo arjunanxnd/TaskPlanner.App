@@ -13,11 +13,6 @@ namespace TaskPlanner.Business_Logic
         private List<Exam> _exams;
         public List<General> _generals;
 
-
-        private Assignment _assignment;
-        private Exam _exam;
-        private General _general;
-
         private int _userId;
         private string _password;
         private string _email;
@@ -30,8 +25,10 @@ namespace TaskPlanner.Business_Logic
             Password = password;
             _exams = new List<Exam>();
             _assignments = new List<Assignment>();
+            _userId++;
         }
 
+        public int UserId { get { return _userId; } }
         public string UserName { get; set; }
         public string FirstAndLastName { get; set; }
         public string Password { get { return _password; } set { _password = value; } }
@@ -59,7 +56,7 @@ namespace TaskPlanner.Business_Logic
             user.FirstAndLastName = FAndL;
         }
 
-        public void AddAssignment(Assignment assignment)
+        public void AddAssignment(Assignment assignment) //Add assignment obj in the list
         {
             _assignments.Add(assignment);
         }
@@ -74,11 +71,10 @@ namespace TaskPlanner.Business_Logic
         }
 
         //exam
-        public void AddExam(Exam exam)
+        public void AddExam(Exam exam) //Add exam obj in the list
         {
             _exams.Add(exam);
         }
-
         public void DeleteExam(Exam exam)
         {
             foreach (Exam dt in _exams)
@@ -89,11 +85,10 @@ namespace TaskPlanner.Business_Logic
         }
 
         //general
-        public void AddGeneral(General general)
+        public void AddGeneral(General general) //Add general obj in the list
         {
             _generals.Add(general);
         }
-
         public void DeleteGeneral(General general)
         {
             foreach (General current in _generals)
@@ -104,5 +99,7 @@ namespace TaskPlanner.Business_Logic
                 }
             }
         }
+
+
     }
 }
