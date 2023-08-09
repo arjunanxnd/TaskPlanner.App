@@ -27,7 +27,6 @@ namespace TaskPlanner.Business_Logic
             FirstAndLastName = firstAndLast;
             E_mail = email;
             Password = password;
-
             _exams = new List<Exam>();
             _assignments = new List<Assignment>();
         }
@@ -65,6 +64,7 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteAssessment(Assignment assignment) 
         {
+            
             foreach (Assignment var in _assignments)
             {
                 if (assignment.DueDate == var.DueDate && assignment.Description.ToLower() == var.Description.ToLower())
