@@ -44,7 +44,6 @@ namespace TaskPlanner.Business_Logic
         {
             user.Password = pass;
         }
-
         public void UpdateUserName(User user,string userName)
         {
             user.UserName = userName;
@@ -62,11 +61,16 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteAssessment(Assignment assignment) 
         {
-            
-            foreach (Assignment var in _assignments)
+            DateTime date = assignment.DueDate;
+            string var = assignment.Description;
+            string sub = assignment.Subject;
+            for (int i = 0; i < _assignments.Count(); i++)
             {
-                if (assignment.DueDate == var.DueDate && assignment.Description.ToLower() == var.Description.ToLower())
+                if (assignment.DueDate == date && assignment.Subject == sub && assignment.Description == var)
+                {
                     _assignments.Remove(assignment);
+                    break;
+                }
             }
         }
 
@@ -77,10 +81,16 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteExam(Exam exam)
         {
-            foreach (Exam dt in _exams)
+            DateTime date = exam.DueDate;
+            string var = exam.Description;
+            string sub = exam.Subject;
+            for (int i=0;i<_exams.Count();i++)
             {
-                if (exam.DueDate == dt.DueDate && exam.Etype == dt.Etype)
+                if (exam.DueDate == date && exam.Subject == sub && exam.Description == var)
+                {
                     _exams.Remove(exam);
+                    break;
+                }
             }
         }
 
@@ -91,11 +101,15 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteGeneral(General general)
         {
-            foreach (General current in _generals)
+            DateTime date = general.WorkDate;
+            string var = general.Description;
+            string title = general.Title;
+            for (int i = 0; i < _exams.Count(); i++)
             {
-                if (current.WorkDate == general.WorkDate && general.Title.ToLower() == current.Title.ToLower())
+                if (general.WorkDate == date && general.Title == title && general.Description == var)
                 {
                     _generals.Remove(general);
+                    break;
                 }
             }
         }
