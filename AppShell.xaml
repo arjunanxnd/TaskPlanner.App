@@ -7,8 +7,48 @@
     Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
-        Title="Home"
+        Title="LoginPage"
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" />
+
+    <FlyoutItem Title="Home">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:Home}"
+            Route="Home"
+            />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Assignment">
+        <ShellContent
+            Title="Assignment"
+            ContentTemplate="{DataTemplate local:AssignmentPage}"
+            Route="AssignmentPage"
+            />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Exam">
+        <ShellContent
+            Title="Assignment"
+            ContentTemplate="{DataTemplate local:ExamPage}"
+            Route="ExamPage"
+            />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Setting">
+        <ShellContent
+            Title="Assignment"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Route="SettingsPage"
+            />
+    </FlyoutItem>
+
+    <FlyoutItem Title="General">
+        <ShellContent
+            Title="Assignment"
+            ContentTemplate="{DataTemplate local:GeneralPage}"
+            Route="GeneralPage"
+            />
+    </FlyoutItem>
 
 </Shell>

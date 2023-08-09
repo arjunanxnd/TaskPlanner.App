@@ -9,8 +9,8 @@ namespace TaskPlanner.Business_Logic
     public class General
     {
         public DateTime WorkDate { get; set; }
-        public string GeneralDec { get; set; }
-        public string Note { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
 
         public List<General> _generals;
         public List<General> Generals { get { return _generals; } }
@@ -29,7 +29,7 @@ namespace TaskPlanner.Business_Logic
         {
             foreach (General current in _generals)
             {
-                if (current.WorkDate == general.WorkDate && general.GeneralDec.ToLower() == current.GeneralDec.ToLower())
+                if (current.WorkDate == general.WorkDate && general.Title.ToLower() == current.Title.ToLower())
                 {
                     _generals.Remove(general);
                 }
