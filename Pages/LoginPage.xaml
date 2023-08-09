@@ -6,7 +6,7 @@
     <VerticalStackLayout>
         
         <Label 
-            Text="Welcome To TMS"
+            Text="Welcome To Task Planner"
             HorizontalOptions="CenterAndExpand"
             FontSize="30"
             FontAttributes="Bold"/>

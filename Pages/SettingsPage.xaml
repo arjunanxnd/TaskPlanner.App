@@ -4,9 +4,31 @@
              x:Class="TaskPlanner.Pages.SettingsPage"
              Title="SettingsPage">
     <VerticalStackLayout>
-        <Label 
-            Text=""
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label
+            Text="Settings"
+            />
+        <Label Text="Name"/>
+            <Entry x:Name="TitleEntry" Placeholder="Enter Name"/>
+
+
+            <Label Text="Password"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Enter New Password"/>
+
+            <Label Text="Email"/>
+        <Entry x:Name="EmailEntry" Placeholder="Enter your registered Email"/>
+
+        <HorizontalStackLayout>
+            <Button
+        x:Name="UpdateBtn"
+        Text="Update"
+        Clicked="OnClickUpdate"
+        />
+            <Button
+        x:Name="HomeBtn"
+        Text="Home"
+        Clicked="OnClickNavigateToHome"
+        />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
+       
 </ContentPage>

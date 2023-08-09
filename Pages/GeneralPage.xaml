@@ -3,16 +3,76 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.GeneralPage"
              Title="GeneralPage">
-    <VerticalStackLayout>
-        <Label Text="Title"/>
-        <Entry x:Name="TitleEntry" Placeholder="Enter Title"/>
+    <ScrollView>
+        <Grid
+            RowDefinitions="2*,*,*,*,*,2*"
+            ColumnDefinitions="*,3*">
+            <Label Text="General"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="Header"
+                   FontAttributes="Bold"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Style="{StaticResource HeaderLabelStyle}"/>
 
-        
-        <Label Text="Description"/>
-        <Entry x:Name="DescriptionEntry" Placeholder="Enter Description"/>
+            <Label Text="Title" 
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Margin="5"
+                       VerticalOptions="End"
+                   Style="{StaticResource FieldLabelStyle}"/>
 
-        <Label Text="Work DueDate"/>
-        <DatePicker x:Name="DueDatePick"/>
-        
-    </VerticalStackLayout>
+            <Entry x:Name="TitleEntry" 
+                       Grid.Row="1"
+                       Grid.Column="1" 
+                       Placeholder="Enter Title" 
+                       HorizontalOptions="FillAndExpand"/>
+
+
+                <Label Text="Description" 
+                       Grid.Column="0"
+                       Grid.Row="2"
+                       Margin="5"
+                       VerticalOptions="End"
+                       Style="{StaticResource FieldLabelStyle}"/>
+                <Entry x:Name="DescriptionEntry" 
+                        Grid.Column="1"
+                        Grid.Row="2"
+                       Placeholder="Enter Description" 
+                       HorizontalOptions="FillAndExpand"/>
+
+                <Label Text="Work DueDate"
+                       Grid.Column="0"
+                       Grid.Row="3"
+                       Margin="5"
+                       VerticalOptions="End"
+                       Style="{StaticResource FieldLabelStyle}"/>
+                
+                <DatePicker x:Name="DueDatePick"
+                            Grid.Column="1"
+                            Grid.Row="3"/>
+
+            <HorizontalStackLayout
+                    Spacing="10" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand"
+                    Grid.ColumnSpan="2"
+                Grid.Row="4"
+                    >
+                <Button
+                x:Name="AddBtn"
+                Text="Add"
+                Clicked="OnClickAdd"
+                />
+
+                <Button
+            x:Name="DeleteBtn"
+            Text="Delete"
+            Clicked="OnClickDelete"
+            />
+            </HorizontalStackLayout>
+        </Grid>
+    </ScrollView>
+
 </ContentPage>

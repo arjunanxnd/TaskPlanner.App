@@ -6,4 +6,15 @@ public partial class GeneralPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void OnClickAdd(object sender, EventArgs e)
+    {
+
+    }
+
+   
+    private void OnClickDelete(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -6,4 +6,14 @@ public partial class SettingsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void OnClickNavigateToHome(object sender, EventArgs e)
+    {
+
+    }
+
+    private void OnClickUpdate(object sender, EventArgs e)
+    {
+
+    }
 }
