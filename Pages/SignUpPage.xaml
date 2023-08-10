@@ -23,6 +23,7 @@
             x:Name="FirstALastEntry"
             Placeholder="First And Last Name"
             HorizontalOptions="CenterAndExpand"
+            WidthRequest="150"
             />
                 <Label Text="             " FontSize="5"/>
 
@@ -30,6 +31,7 @@
             x:Name="EmailEntry"
             Placeholder="Email"
             HorizontalOptions="Center"
+            WidthRequest="150"
             />
                 <Label Text="             " FontSize="5"/>
 
@@ -37,6 +39,8 @@
             x:Name="UsernameEntry"
             Placeholder="Username"
             HorizontalOptions="CenterAndExpand"
+            WidthRequest="150"
+
             />
                 <Label Text="             " FontSize="20"/>
 

@@ -22,8 +22,11 @@ namespace TaskPlanner.Business_Logic
             FirstAndLastName = firstAndLast;
             E_mail = email;
             Password = password;
+
             _exams = new List<Exam>();
             _assignments = new List<Assignment>();
+            _generals = new List<General>();
+
             _userId++;
         }
 
@@ -31,7 +34,7 @@ namespace TaskPlanner.Business_Logic
         public string UserName { get; set; }
         public string FirstAndLastName { get; set; }
         public string Password { get { return _password; } set { _password = value; } }
-        public string E_mail { get { return _email; } set { if (value.Contains("@gmail.com")) _email = value; } }
+        public string E_mail { get { return _email; } set { if (value.Contains("@gmail.com")) _email = value; else throw new Exception("Please enter a Gmail Email id"); } }
 
         public List<Exam> ExamList { get { return _exams; }  }
         public List<Assignment> AssignmentList { get { return _assignments; }  }
@@ -102,6 +105,11 @@ namespace TaskPlanner.Business_Logic
                     break;
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{UserName} || {UserId}";
         }
 
 
