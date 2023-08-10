@@ -60,12 +60,9 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteAssessment(Assignment assignment) 
         {
-            DateTime date = assignment.DueDate;
-            string var = assignment.Description;
-            string sub = assignment.Subject;
             for (int i = 0; i < _assignments.Count(); i++)
             {
-                if (assignment.DueDate == date && assignment.Subject == sub && assignment.Description == var)
+                if (_assignments[i] == assignment)
                 {
                     _assignments.Remove(assignment);
                     break;
@@ -80,12 +77,9 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteExam(Exam exam)
         {
-            DateTime date = exam.DueDate;
-            string var = exam.Description;
-            string sub = exam.Subject;
             for (int i=0;i<_exams.Count();i++)
             {
-                if (exam.DueDate == date && exam.Subject == sub && exam.Description == var)
+                if (_exams[i] == exam)
                 {
                     _exams.Remove(exam);
                     break;
@@ -100,12 +94,9 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteGeneral(General general)
         {
-            DateTime date = general.WorkDate;
-            string var = general.Description;
-            string title = general.Title;
             for (int i = 0; i < _exams.Count(); i++)
             {
-                if (general.WorkDate == date && general.Title == title && general.Description == var)
+                if (_generals[i] == general)
                 {
                     _generals.Remove(general);
                     break;
