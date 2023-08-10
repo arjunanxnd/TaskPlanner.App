@@ -4,70 +4,57 @@
              x:Class="TaskPlanner.Pages.AssignmentPage"
              Title="AssignmentPage">
     <ScrollView>
-        <Grid
-            RowDefinitions="2*,*,*,*,*,2*"
-            ColumnDefinitions="*,3*">
+        <StackLayout HorizontalOptions="CenterAndExpand">
             <Label Text="Assignment"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"
                    FontAttributes="Bold"
-                   Grid.Column="0"
-                   FontSize="Header"/>
+                   FontSize="Header"
+                   Margin="40"/>
 
-            
+            <Entry x:Name="SubjectEntry" 
+                   Placeholder="Enter Subject" 
+                   HorizontalOptions="CenterAndExpand"
+                    Margin="10"
+                   WidthRequest="100"/>
 
-            <Entry x:Name="TitleEntry" 
-                       Grid.Row="1"
-                       Grid.Column="0" 
-                       Placeholder="Enter Title" 
-                       HorizontalOptions="FillAndExpand"/>
+            <Editor
+                Placeholder="Enter Description"
+                VerticalOptions="FillAndExpand"
+                Margin="10" />
 
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand"
+                         Padding="10,5"
+                         Margin="10">
+                <Label Text="Due Date:"
+                       Style="{StaticResource FieldLabelStyle}"
+                       VerticalTextAlignment="Center"/>
 
-            
-            <Entry x:Name="DescriptionEntry" 
-                        Grid.Column="1"
-                        Grid.Row="2"
-                       Placeholder="Enter Description" 
-                       HorizontalOptions="FillAndExpand"/>
+                <DatePicker x:Name="DueDatePicker"
+                            HorizontalOptions="CenterAndExpand"
+                            />
+            </StackLayout>
 
-            <Label Text="Work DueDate"
-                       Grid.Column="0"
-                       Grid.Row="3"
-                       Style="{StaticResource FieldLabelStyle}"/>
+            <Button x:Name="AddBtn"
+                    Text="Add"
+                    Clicked="OnClickAddAssignment"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand"/>
 
-            <DatePicker x:Name="DueDatePick"
-                            Grid.Column="1"
-                            Grid.Row="4"/>
+            <Label Text="Please select the assignment you wish to Delete in the Picker"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Padding="0,10"/>
 
-            
-                <Button
-                x:Name="AddBtn"
-                Text="Add"
-                Clicked="OnClickAddAssignment"
-                HorizontalOptions="CenterAndExpand" 
-                VerticalOptions="CenterAndExpand"
-                Grid.Row="5"
-                />
+            <Picker x:Name="AssignmentCategoryPicker"
+                    SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
+                    HorizontalOptions="CenterAndExpand"/>
 
-            <Label
-                Text="Please select the assignment you wish to Delete in the Picker"
-                Grid.Column="0"
-                Grid.Row="6"
-                />
-                <Picker
-                x:Name="AssignmentCategoryPicker"
-                SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
-                Grid.Column="1"
-                Grid.Row="6"/>
-                    
-                <Button
-            x:Name="DeleteBtn"
-            Text="Delete"
-            Clicked="OnClickDeleteAssignment"
-            HorizontalOptions="CenterAndExpand" 
-            VerticalOptions="CenterAndExpand"
-            Grid.Row="7"
-            />
-        </Grid>
+            <Button x:Name="DeleteBtn"
+                    Text="Delete"
+                    Clicked="OnClickDeleteAssignment"
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
     </ScrollView>
 </ContentPage>

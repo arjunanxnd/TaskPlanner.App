@@ -11,7 +11,7 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" FlyoutItemIsVisible="False"/>
 
-    <FlyoutItem Title="Assignment" FlyoutItemIsVisible="True">
+    <FlyoutItem Title="Home" FlyoutItemIsVisible="True">
         <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:Home}"
