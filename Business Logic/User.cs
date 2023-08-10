@@ -15,16 +15,19 @@ namespace TaskPlanner.Business_Logic
         private string _password;
         private string _email;
 
-        public User(string userName, string firstAndLast, string email, string password)
+        public User(string userName, string firstAndLast, string email, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
         {
             UserName = userName;
             FirstAndLastName = firstAndLast;
             E_mail = email;
             Password = password;
 
-            _exams = new List<Exam>();
-            _assignments = new List<Assignment>();
-            _generals = new List<General>();
+            exams = new List<Exam>();
+            assignments = new List<Assignment>();
+            generals = new List<General>();
+            _assignments = assignments;
+            _exams = exams;
+            _generals = generals;
         }
 
         public int UserId { get; set; }

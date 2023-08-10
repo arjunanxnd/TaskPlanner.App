@@ -1,12 +1,19 @@
 ﻿namespace TaskPlanner.Pages;
 using TaskPlanner.Business_Logic;
+using TaskPlanner.Data_Access;
 
 public partial class LoginPage : ContentPage
 {
+    JSONDataManager _manager;
     UserRepository _repository;
-	public LoginPage()
+    private string _fileName = "userData.json";
+
+    public LoginPage()
 	{
 		InitializeComponent();
+        string filePath = Path.Combine(FileSystem.Current.AppDataDirectory, _fileName);
+        _manager = new JSONDataManager(filePath);
+
         _repository = new UserRepository();
     }
 

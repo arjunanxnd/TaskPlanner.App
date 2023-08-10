@@ -25,7 +25,7 @@ public partial class SignUpPage : ContentPage
 
             if (_repository.Users == null)
             {
-                _user = new User(uName, firstALast, email, password);
+                _user = new User(uName, firstALast, email, password, null, null, null);
             }
             if (_repository.Users != null)
             {
@@ -34,7 +34,7 @@ public partial class SignUpPage : ContentPage
                     if (user.UserName == uName)
                         throw new Exception("This user name Exists\nTry using different one");
                 }
-                _user = new User(uName, firstALast, email, password);
+                _user = new User(uName, firstALast, email, password, null, null, null);
             }
 
             _repository.AddUser(_user);
