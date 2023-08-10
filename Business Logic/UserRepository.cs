@@ -12,7 +12,6 @@ namespace TaskPlanner.Business_Logic
     {
         List<User> _users;
         public List<User> Users { get {  return _users; } }
-        User _user;
         public UserRepository()
         {
             _users = new List<User>();

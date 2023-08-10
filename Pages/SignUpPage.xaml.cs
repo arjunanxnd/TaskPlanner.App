@@ -38,7 +38,6 @@ public partial class SignUpPage : ContentPage
                 _user = new User(uName, firstALast, email, password);
             }
 
-
             _repository.AddUser(_user);
             if (_repository.Users.Count() >= 1)
             {

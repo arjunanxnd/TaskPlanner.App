@@ -10,15 +10,40 @@ namespace TaskPlanner.Data_Access
 {
     public class JSONDataManager 
     {
-        string _fileName;
-        public JSONDataManager(string fileName)
+        string _jsonFileName;
+        string _csvFilename;
+        public JSONDataManager(string jsonFileName, string csvFilename)
         {
-            _fileName = fileName;
+            _jsonFileName = jsonFileName;
+            _csvFilename = csvFilename;
         }
-        
+
+       
+         public void WriteUserID(User user)
+         {
+            List<string> sUsers = new List<string>();
+                string sUser = Convert.ToString(user.UserId); 
+                sUsers.Add(sUser);  
+            File.WriteAllLines(_csvFilename, sUsers); 
+         }
+
+        public int LoadUserID()
+        {
+            int num = 0;
+            string[] sUsers = File.ReadAllLines(_csvFilename);
+
+            foreach (string pString in sUsers)
+            {
+                num= Convert.ToInt32(pString);
+            }
+
+            return num; 
+
+        }
+
         public void WriteUserInformation(List<User> users)
         {
-            using (FileStream writer = new FileStream(_fileName, FileMode.OpenOrCreate))
+            using (FileStream writer = new FileStream(_jsonFileName, FileMode.OpenOrCreate))
             {
                 JsonSerializer.Serialize(writer, users);
             }
@@ -27,7 +52,7 @@ namespace TaskPlanner.Data_Access
         public List<User> LoadUsers()
         {
             List<User> users = new List<User>();
-            using (FileStream reader = new FileStream(_fileName, FileMode.Open))
+            using (FileStream reader = new FileStream(_jsonFileName, FileMode.Open))
             {
                 users = JsonSerializer.Deserialize<List<User>>(reader);
             }

@@ -17,17 +17,19 @@
                     Margin="10"
                    WidthRequest="100"/>
 
-            <Editor
+            <Frame BorderColor="Red" CornerRadius="10">
+                <Editor
                 Placeholder="Enter Description"
                 VerticalOptions="FillAndExpand"
-                Margin="10" />
+                Margin="10" 
+                />
+            </Frame>
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="10,5"
                          Margin="10">
-                <Label Text="Due Date:"
-                       Style="{StaticResource FieldLabelStyle}"
+                <Label Text="Due Date:   "
                        VerticalTextAlignment="Center"/>
 
                 <DatePicker x:Name="DueDatePicker"
