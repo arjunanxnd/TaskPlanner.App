@@ -15,7 +15,6 @@ public partial class SignUpPage : ContentPage
     {
         try
         {
-            
             if (UsernameEntry == null && EmailEntry == null && FirstALastEntry == null)
                 throw new Exception("Please fill all the Details before proceeding");
             string uName = UsernameEntry.Text;
@@ -38,7 +37,6 @@ public partial class SignUpPage : ContentPage
                 _user = new User(uName, firstALast, email, password);
             }
 
-
             _repository.AddUser(_user);
             if (_repository.Users.Count() >= 1)
             {
@@ -47,6 +45,7 @@ public partial class SignUpPage : ContentPage
             }
             else
                 throw new Exception("User List did not populate");
+
         }catch(Exception ex)
         {
             DisplayAlert("Error", $"{ex.Message}", "OK");

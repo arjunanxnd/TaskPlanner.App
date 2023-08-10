@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.LoginPage"
-             Title="LoginPage">
+             Title="">
     <VerticalStackLayout>
-        
-        <Label 
-            Text="Welcome To TMS"
-            HorizontalOptions="CenterAndExpand"
-            FontSize="30"
-            FontAttributes="Bold"/>
+        <Label Text="    " FontSize="20"/>
+        <Image
+            Source="task.jpg"
+            HeightRequest="300"
+            HorizontalOptions="Center"
+            />
 
         <Label Text="             " FontSize="40"/>
         <Label
@@ -48,9 +48,9 @@
             />
             <Label Text="           "/>
             <Button
-                x:Name="LoginSucsflBtn"
+                x:Name="LoginBtn"
                 Text="Log-in"
-                Clicked="LoginSucsflBtn_Clicked"
+                Clicked="LoginBtn_Clicked"
             />
             </HorizontalStackLayout>
     </VerticalStackLayout>

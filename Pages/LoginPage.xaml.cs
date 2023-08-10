@@ -10,7 +10,7 @@ public partial class LoginPage : ContentPage
         _repository = new UserRepository();
     }
 
-    private async void LoginSucsflBtn_Clicked(System.Object sender, System.EventArgs e)
+    private async void LoginBtn_Clicked(System.Object sender, System.EventArgs e)
     {
         try
         {
