@@ -10,6 +10,7 @@ public partial class Home : ContentPage
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
     }
         
+        
     
 
 	/*public void SaveProducts(JSONDataManager dataManager)
