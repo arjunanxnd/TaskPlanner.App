@@ -12,7 +12,6 @@ namespace TaskPlanner.Business_Logic
         private List<Exam> _exams;
         public List<General> _generals;
 
-        private int _userId;
         private string _password;
         private string _email;
 
@@ -26,11 +25,9 @@ namespace TaskPlanner.Business_Logic
             _exams = new List<Exam>();
             _assignments = new List<Assignment>();
             _generals = new List<General>();
-
-            _userId++;
         }
 
-        public int UserId { get { return _userId; } }
+        public int UserId { get; set; }
         public string UserName { get; set; }
         public string FirstAndLastName { get; set; }
         public string Password { get { return _password; } set { _password = value; } }

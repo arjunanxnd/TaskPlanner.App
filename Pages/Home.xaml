@@ -9,6 +9,13 @@
             HorizontalOptions="CenterAndExpand"
             FontSize="Header"/>
 
+        <Button
+            x:Name="LogOutBtn"
+            Text="Log-out"
+            Clicked="LogOutBtn_Clicked"
+            HorizontalOptions="EndAndExpand"
+            />
+
         <ListView>
 
         </ListView>
