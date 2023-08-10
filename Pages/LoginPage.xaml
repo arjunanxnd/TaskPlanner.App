@@ -21,14 +21,18 @@
         <Label Text="             " FontSize="30"/>
 
         <Entry
+            x:Name="UserNameEntry"
             Placeholder="Username"
             HorizontalOptions="Center"
+            WidthRequest="150"
             />
                 <Label Text="             " FontSize="10"/>
 
         <Entry
+            x:Name="PasswordEntry"
             Placeholder="Password"
             HorizontalOptions="CenterAndExpand"
+            WidthRequest="150"
             />
                 <Label Text="             " FontSize="30"/>
 
