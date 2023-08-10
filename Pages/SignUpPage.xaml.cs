@@ -15,7 +15,6 @@ public partial class SignUpPage : ContentPage
     {
         try
         {
-            
             if (UsernameEntry == null && EmailEntry == null && FirstALastEntry == null)
                 throw new Exception("Please fill all the Details before proceeding");
             string uName = UsernameEntry.Text;
@@ -26,7 +25,7 @@ public partial class SignUpPage : ContentPage
 
             if (_repository.Users == null)
             {
-                _user = new User(uName, firstALast, email, password);
+                _user = new User(uName, firstALast, email, password, null, null, null);
             }
             if (_repository.Users != null)
             {
@@ -35,7 +34,7 @@ public partial class SignUpPage : ContentPage
                     if (user.UserName == uName)
                         throw new Exception("This user name Exists\nTry using different one");
                 }
-                _user = new User(uName, firstALast, email, password);
+                _user = new User(uName, firstALast, email, password, null, null, null);
             }
 
             _repository.AddUser(_user);
@@ -46,6 +45,7 @@ public partial class SignUpPage : ContentPage
             }
             else
                 throw new Exception("User List did not populate");
+
         }catch(Exception ex)
         {
             DisplayAlert("Error", $"{ex.Message}", "OK");

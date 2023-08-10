@@ -12,13 +12,20 @@ namespace TaskPlanner.Business_Logic
     {
         List<User> _users;
         public List<User> Users { get {  return _users; } }
+        User _user;
+
+        public int UserID { get; set;}
+
         public UserRepository()
         {
             _users = new List<User>();
+            AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123"));
         }
 
         public void AddUser(User user)
         {
+            UserID++;
+            user.UserId = UserID;
             foreach (User _user in _users)
             {
                 if (user.UserName == _user.UserName)

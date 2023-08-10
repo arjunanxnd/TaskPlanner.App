@@ -17,20 +17,14 @@
             VerticalOptions="StartAndExpand"
             HorizontalOptions="CenterAndExpand"
             FontSize="23"
-            />        <Label Text="             " FontSize="15"/>
+            />        <Label Text="______________________________________________" FontSize="5" HorizontalOptions="CenterAndExpand"/>
+           
+        <Label Text="             " FontSize="15"/>
 
         <Entry
             x:Name="FirstALastEntry"
             Placeholder="First And Last Name"
             HorizontalOptions="CenterAndExpand"
-            WidthRequest="150"
-            />
-                <Label Text="             " FontSize="5"/>
-
-        <Entry
-            x:Name="EmailEntry"
-            Placeholder="Email"
-            HorizontalOptions="Center"
             WidthRequest="150"
             />
                 <Label Text="             " FontSize="5"/>
@@ -44,7 +38,18 @@
             />
                 <Label Text="             " FontSize="20"/>
 
+        <Label Text="Please enter your gmail Id:" FontAttributes="Bold" HorizontalOptions="Center"
+               />
+                <Label Text="             " FontSize="7"/>
+        <Entry
+            x:Name="EmailEntry"
+            Placeholder="Email"
+            HorizontalOptions="Center"
+            WidthRequest="150"
+            />
+                <Label Text="             " FontSize="20"/>
 
+        
         <Button
             x:Name="ToPsswrdPgBtn"
             Text="Next"

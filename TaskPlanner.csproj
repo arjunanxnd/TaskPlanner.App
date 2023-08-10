@@ -65,12 +65,12 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\" />
-	  <None Remove="Resources\Images\taskFM_adobe_express.png" />
+	  <None Remove="Resources\Images\task.jpg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Resources\Images\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Images\taskFM_adobe_express.png" />
+	  <MauiImage Include="Resources\Images\task.jpg" />
 	</ItemGroup>
 </Project>
