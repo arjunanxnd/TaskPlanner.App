@@ -21,7 +21,6 @@ public partial class LoginPage : ContentPage
     {
         try
         {
-            
             string uName = UserNameEntry.Text;
             string pass = PasswordEntry.Text;
             if (uName == null && pass == null)
