@@ -11,18 +11,21 @@ public partial class Home : ContentPage
 	string _csvFileName = "user.csv";
 	JSONDataManager _userDataManger;
     public UserRepository UserRepository { get { return _userRepository; } }
-    public Home()
+
+    public Home(int uId)
 	{
 		InitializeComponent();
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
 		
 		string jsonFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _jsonFileName);
         string csvFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _csvFileName);
-        _userDataManger = new JSONDataManager(jsonFilePath, csvFilePath);	
+        _userDataManger = new JSONDataManager(jsonFilePath, csvFilePath);
+        int userId = uId;
     }
 
     private async void LogOutBtn_Clicked(System.Object sender, System.EventArgs e)
     {
+        
         bool isAnswered = await DisplayAlert("Log-out?", "Do you want to Log-out?", "Yes", "No");
         if (isAnswered)
             await Shell.Current.GoToAsync("//LoginPage");
@@ -33,5 +36,5 @@ public partial class Home : ContentPage
     /*public void SaveProducts(JSONDataManager dataManager)
 	{
         _userRepository.SaveUser(_userDataManger);
-	}
+	}*/
 }
