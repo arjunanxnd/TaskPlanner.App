@@ -20,7 +20,6 @@ namespace TaskPlanner.Business_Logic
         {
             _users = new List<User>();
             AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
-
         }
 
         public void AddUser(User user)
@@ -60,5 +59,17 @@ namespace TaskPlanner.Business_Logic
                 _users = new List<User>(); 
             }
         }
+
+        public int GetUserId(string userName)
+        {
+            int id = 0;
+            foreach(User user in Users)
+            {
+                if (userName == user.UserName)
+                    id = user.UserId;
+            }
+            return id;
+        }
+
     }
 }

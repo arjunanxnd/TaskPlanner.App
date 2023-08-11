@@ -12,21 +12,21 @@ namespace TaskPlanner.Data_Access
     {
         string _jsonFileName;
         string _csvFilename;
-
         public JSONDataManager(string jsonFileName, string csvFilename)
         {
             _jsonFileName = jsonFileName;
-            _csvFilename = csvFilename;
         }
 
-        
-         public void WriteUserID(User user)
-         {
+        public string CsvFile { get { return _csvFilename; } set { _csvFilename = value; } }
+
+        //csv methods
+        public void WriteUserID(User user)
+        {
             List<string> sUsers = new List<string>();
                 string sUser = Convert.ToString(user.UserId); 
                 sUsers.Add(sUser);  
             File.WriteAllLines(_csvFilename, sUsers); 
-         }
+        }
 
         public int LoadUserID()
         {
@@ -42,6 +42,7 @@ namespace TaskPlanner.Data_Access
 
         }
 
+        //Json methods
         public void WriteUserInformation(List<User> users)
         {
             using (FileStream writer = new FileStream(_jsonFileName, FileMode.OpenOrCreate))
