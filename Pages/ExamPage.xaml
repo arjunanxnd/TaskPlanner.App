@@ -1,76 +1,82 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.ExamPage"
              Title="ExamPage">
+
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
+
     <ScrollView>
-        <StackLayout  Spacing="10">
+        <StackLayout>
             <Label Text="Exam"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
                    FontSize="Header"
-                   Margin="40"/>
+                   Margin="40"
+                   TextColor="#0A4480" />
 
             <Entry x:Name="SubjectEntry" 
                    Placeholder="Enter Subject" 
                    HorizontalOptions="CenterAndExpand"
                    Margin="10"
-                   WidthRequest="100"/>
-            <Frame BorderColor="Red" HasShadow="False" Padding="11">
-                <Editor
-                Placeholder="Enter Description"
-                VerticalOptions="CenterAndExpand"
-                
-                Margin="20" 
-                />
+                   WidthRequest="200"/>
+
+            <Frame BorderColor="LightGray" CornerRadius="10">
+                <Editor Placeholder="Enter Description"
+                        Margin="10"
+                        HeightRequest="100" />
             </Frame>
 
-            <HorizontalStackLayout Spacing="10">
-                <RadioButton Content="Quiz" CheckedChanged="QuizRadioButton" />
-                <RadioButton Content="Midterm"  CheckedChanged="MidtermRadioButton" />
-                <RadioButton Content="Finals"  CheckedChanged="FinalsRadioButton" />
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <RadioButton Content="Quiz" CheckedChanged="QuizRadioButton" TextColor="#0A4480" />
+                <RadioButton Content="Midterm" CheckedChanged="MidtermRadioButton" TextColor="#0A4480" />
+                <RadioButton Content="Finals" CheckedChanged="FinalsRadioButton" TextColor="#0A4480" />
             </HorizontalStackLayout>
-                
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="10,5"
                          Margin="10">
-                <Label Text="Due Date:   "
+                <Label Text="Due Date: "
                        VerticalTextAlignment="Center"
-                       Margin="10"/>
+                       TextColor="#0A4480"
+                       WidthRequest="90" />
 
-                <DatePicker 
-                    x:Name="DueDatePicker"
-                    HorizontalOptions="CenterAndExpand"
-                    BackgroundColor="Gray"   
-                    TextColor="Black"/>
+                <DatePicker x:Name="DueDatePicker"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="#0A4480"
+                            WidthRequest="200"/>
             </StackLayout>
 
             <Button x:Name="AddBtn"
                     Text="Add"
                     Clicked="OnClickAddExam"
                     HorizontalOptions="CenterAndExpand" 
-                    VerticalOptions="CenterAndExpand"/>
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"/>
 
             <Label Text="Please select the exam you wish to Delete from the Picker"
                    HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   Padding="0,10"/>
+                   TextColor="#0A4480"
+                   Margin="10"/>
 
-            <Frame BorderColor="Red"  IsClippedToBounds="True">
+            <Frame BorderColor="LightGray" IsClippedToBounds="True">
                 <Picker x:Name="ExamCategoryPicker"
-                    SelectedIndexChanged="ExamCategoryPicker_SelectedIndexChanged"
-                    HorizontalOptions="CenterAndExpand"
-                    WidthRequest="300"/>
+                        SelectedIndexChanged="ExamCategoryPicker_SelectedIndexChanged"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="200"
+                        TextColor="#0A4480" />
             </Frame>
-            
 
             <Button x:Name="DeleteBtn"
                     Text="Delete"
                     Clicked="OnClickDeleteExam"
                     HorizontalOptions="CenterAndExpand" 
-                    VerticalOptions="CenterAndExpand"/>
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

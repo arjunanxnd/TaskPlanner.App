@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.GeneralPage"
              Title="GeneralPage">
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="CommonLabelStyle">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Label" x:Key="FieldLabelStyle" BasedOn="{StaticResource CommonLabelStyle}">
+            <Setter Property="TextColor" Value="LightBlue"/>
+            <Setter Property="HorizontalOptions" Value="End"/>
+        </Style>
+        <Style TargetType="Label" x:Key="HeaderLabelStyle" BasedOn="{StaticResource CommonLabelStyle}">
+            <Setter Property="TextColor" Value="DarkBlue"/>
+            <Setter Property="FontSize" Value="Header"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
     <ScrollView>
         <Grid
             RowDefinitions="2*,*,*,*,*,2*"

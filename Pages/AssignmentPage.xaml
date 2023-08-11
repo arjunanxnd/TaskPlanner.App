@@ -1,62 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.AssignmentPage"
              Title="AssignmentPage">
+
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
+
     <ScrollView>
-        <StackLayout HorizontalOptions="CenterAndExpand">
+        <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
             <Label Text="Assignment"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
                    FontSize="Header"
-                   Margin="40"/>
+                   Margin="50"
+                   TextColor="#0A4480"/>
 
             <Entry x:Name="SubjectEntry" 
                    Placeholder="Enter Subject" 
                    HorizontalOptions="CenterAndExpand"
-                    Margin="10"
-                   WidthRequest="100"/>
+                   WidthRequest="200"/>
 
-            <Frame BorderColor="Red" CornerRadius="10">
-                <Editor
-                Placeholder="Enter Description"
-                VerticalOptions="FillAndExpand"
-                Margin="10" 
-                />
+            <Frame BorderColor="LightGray" CornerRadius="10">
+                <Editor Placeholder="Enter Description"
+                        Margin="10"
+                        HeightRequest="100" />
             </Frame>
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="10,5"
                          Margin="10">
-                <Label Text="Due Date:   "
-                       VerticalTextAlignment="Center"/>
+                <Label Text="Due Date:"
+                       VerticalTextAlignment="Center"
+                       TextColor="#0A4480" />
 
                 <DatePicker x:Name="DueDatePicker"
                             HorizontalOptions="CenterAndExpand"
-                            />
+                            TextColor="#0A4480" />
             </StackLayout>
 
             <Button x:Name="AddBtn"
                     Text="Add"
                     Clicked="OnClickAddAssignment"
                     HorizontalOptions="CenterAndExpand" 
-                    VerticalOptions="CenterAndExpand"/>
+                    BackgroundColor="#0A4480"
+                    TextColor="White"/>
 
             <Label Text="Please select the assignment you wish to Delete in the Picker"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
-                   Padding="0,10"/>
+                   TextColor="#0A4480"/>
 
-            <Picker x:Name="AssignmentCategoryPicker"
-                    SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
-                    HorizontalOptions="CenterAndExpand"/>
+            <Frame BorderColor="LightGray" IsClippedToBounds="True">
+                <Picker x:Name="AssignmentCategoryPicker"
+                        SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
+                        HorizontalOptions="CenterAndExpand"/>
+            </Frame>
 
             <Button x:Name="DeleteBtn"
                     Text="Delete"
                     Clicked="OnClickDeleteAssignment"
                     HorizontalOptions="CenterAndExpand" 
-                    VerticalOptions="CenterAndExpand"/>
+                    BackgroundColor="#0A4480"
+                    TextColor="White"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

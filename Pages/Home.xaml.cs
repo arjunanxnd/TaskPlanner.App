@@ -12,15 +12,15 @@ public partial class Home : ContentPage
 	JSONDataManager _userDataManger;
     public UserRepository UserRepository { get { return _userRepository; } }
 
-    public Home(int uId)
+    public Home()
 	{
 		InitializeComponent();
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
 		
 		string jsonFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _jsonFileName);
         string csvFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _csvFileName);
-        _userDataManger = new JSONDataManager(jsonFilePath, csvFilePath);
-        int userId = uId;
+        _userDataManger = new JSONDataManager(jsonFilePath);
+        
     }
 
     
@@ -37,5 +37,5 @@ public partial class Home : ContentPage
     public void SaveProducts(JSONDataManager dataManager)
 	{
         _userRepository.SaveUser(_userDataManger);
-	}*/
+	}
 }
