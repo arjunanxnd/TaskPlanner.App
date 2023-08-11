@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using TaskPlanner.Data_Access;
 
@@ -11,8 +12,7 @@ namespace TaskPlanner.Business_Logic
     public class UserRepository
     {
         List<User> _users;
-        public List<User> Users { get {  return _users; } }
-        User _user;
+        public List<User> Users { get {  return _users; } set { _users = value; } }
 
         public int UserID { get; set;}
 
@@ -20,6 +20,7 @@ namespace TaskPlanner.Business_Logic
         {
             _users = new List<User>();
             AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
+            SaveUser(FilePath.JsonFilename);
         }
 
         public void AddUser(User user)
@@ -43,16 +44,20 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
-        public void SaveUser(JSONDataManager dataManger)
+        public void SaveUser(string filePath)
         {
+            JSONDataManager dataManger = new JSONDataManager();
+            dataManger.JsonFile = filePath;
             dataManger.WriteUserInformation(Users);
         }
 
-        public void ReadUsers(JSONDataManager dataManager)
+        public void ReadUsers(string filePath)
         {
+            JSONDataManager dataManger = new JSONDataManager();
+            dataManger.JsonFile = filePath;
             try
             {
-                _users = dataManager.LoadUsers();
+                _users = dataManger.LoadUsers();
             }
             catch (FileNotFoundException ex)
             {
@@ -60,15 +65,14 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
-        public int GetUserId(string userName)
+        public List<User> LoadUsers(string filePath)
         {
-            int id = 0;
-            foreach(User user in Users)
+            List<User> users = new List<User>();
+            using (FileStream reader = new FileStream(filePath, FileMode.Open))
             {
-                if (userName == user.UserName)
-                    id = user.UserId;
+                users = JsonSerializer.Deserialize<List<User>>(reader);
             }
-            return id;
+            return users;
         }
 
     }

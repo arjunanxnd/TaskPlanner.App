@@ -1,5 +1,6 @@
 ﻿namespace TaskPlanner.Pages;
 using TaskPlanner.Business_Logic;
+using TaskPlanner.Data_Access;
 
 public partial class SignUpPage : ContentPage
 {
@@ -38,6 +39,7 @@ public partial class SignUpPage : ContentPage
             }
 
             _repository.AddUser(_user);
+            _repository.SaveUser(FilePath.JsonFilename);
             if (_repository.Users.Count() >= 1)
             {
                 await DisplayAlert("Info", $"User {_user} added", "OK");
