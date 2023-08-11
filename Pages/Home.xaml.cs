@@ -5,22 +5,29 @@ namespace TaskPlanner.Pages;
 
 public partial class Home : ContentPage
 {
-	UserRepository _userRepository = new UserRepository();
+    UserRepository _userRepository = new UserRepository();
+	User _user;
 
-	string _jsonFileName = "userData.json";
-	string _csvFileName = "user.csv";
-	JSONDataManager _userDataManger;
+	//JSONDataManager _userDataManger;
     public UserRepository UserRepository { get { return _userRepository; } }
+    int userId = 0;
 
-    public Home(int uId)
+    public Home()
 	{
 		InitializeComponent();
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
 		
-		string jsonFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _jsonFileName);
-        string csvFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _csvFileName);
-        _userDataManger = new JSONDataManager(jsonFilePath, csvFilePath);
-        int userId = uId;
+		//string jsonFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _jsonFileName);
+        //string csvFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _csvFileName);
+        //_userDataManger = new JSONDataManager(jsonFilePath);
+        userId = FilePath.CurrentUserId;
+        _userRepository.Users = _userRepository.LoadUsers(FilePath.JsonFilename);
+
+        foreach (User user in _userRepository.Users)
+        {
+            if (user.UserId == userId)
+                _user = user;
+        }
     }
 
     
@@ -34,8 +41,23 @@ public partial class Home : ContentPage
 
 
 
-    public void SaveProducts(JSONDataManager dataManager)
+    /*public void SaveProducts(JSONDataManager dataManager)
 	{
         _userRepository.SaveUser(_userDataManger);
 	}*/
+
+    private async void CheckBtn_Clicked(System.Object sender, System.EventArgs e)
+    {
+        foreach(User user in _userRepository.Users)
+        {
+            if (userId == user.UserId)
+            {
+                await DisplayAlert("Info", $"Current user is {user}", "OK");
+                break;
+            }
+        }
+    }
+
+
+
 }

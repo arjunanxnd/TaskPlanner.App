@@ -16,6 +16,13 @@
             HorizontalOptions="EndAndExpand"
             />
 
+        <Button
+            x:Name="CheckBtn"
+            Text="Check current user"
+            Clicked="CheckBtn_Clicked"
+            HorizontalOptions="CenterAndExpand"
+            />
+
         <ListView>
 
         </ListView>

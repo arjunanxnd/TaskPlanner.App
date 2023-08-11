@@ -8,7 +8,7 @@ namespace TaskPlanner.Data_Access
 {
     public static class FilePath
     {
-        public static string CsvFilename { get; set; }
         public static string JsonFilename { get; set; }
+        public static int CurrentUserId { get; set; }
     }
 }

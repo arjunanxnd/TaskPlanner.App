@@ -11,36 +11,12 @@ namespace TaskPlanner.Data_Access
     public class JSONDataManager 
     {
         string _jsonFileName;
-        string _csvFilename;
-        public JSONDataManager(string jsonFileName, string csvFilename)
-        {
-            _jsonFileName = jsonFileName;
-        }
+        //public JSONDataManager(string jsonFileName)
+        //{
+        //    _jsonFileName = jsonFileName;
+        //}
 
-        public string CsvFile { get { return _csvFilename; } set { _csvFilename = value; } }
-
-        //csv methods
-        public void WriteUserID(User user)
-        {
-            List<string> sUsers = new List<string>();
-                string sUser = Convert.ToString(user.UserId); 
-                sUsers.Add(sUser);  
-            File.WriteAllLines(_csvFilename, sUsers); 
-        }
-
-        public int LoadUserID()
-        {
-            int num = 0;
-            string[] sUsers = File.ReadAllLines(_csvFilename);
-
-            foreach (string pString in sUsers)
-            {
-                num= Convert.ToInt32(pString);
-            }
-
-            return num; 
-
-        }
+        public string JsonFile { get { return _jsonFileName; } set { _jsonFileName = value; } }
 
         //Json methods
         public void WriteUserInformation(List<User> users)
