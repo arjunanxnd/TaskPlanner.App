@@ -20,6 +20,7 @@ namespace TaskPlanner.Business_Logic
         {
             _users = new List<User>();
             AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
+            SaveUser(FilePath.JsonFilename);
         }
 
         public void AddUser(User user)
