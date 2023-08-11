@@ -6,13 +6,16 @@ public partial class LoginPage : ContentPage
 {
     JSONDataManager _manager;
     UserRepository _repository;
-    private string _fileName = "userData.json";
+    private string _fileName = "userData.json"; 
+    private string _csvFilename = "user.csv";
 
     public LoginPage()
 	{
 		InitializeComponent();
         string filePath = Path.Combine(FileSystem.Current.AppDataDirectory, _fileName);
-        _manager = new JSONDataManager(filePath);
+        string csvFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _csvFileName);
+
+        _manager = new JSONDataManager(filePath, csvFilePath);
 
         _repository = new UserRepository();
     }

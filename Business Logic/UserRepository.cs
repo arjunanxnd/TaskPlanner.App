@@ -19,7 +19,8 @@ namespace TaskPlanner.Business_Logic
         public UserRepository()
         {
             _users = new List<User>();
-            AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123"));
+            AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
+
         }
 
         public void AddUser(User user)

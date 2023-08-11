@@ -12,13 +12,14 @@ namespace TaskPlanner.Data_Access
     {
         string _jsonFileName;
         string _csvFilename;
+
         public JSONDataManager(string jsonFileName, string csvFilename)
         {
             _jsonFileName = jsonFileName;
             _csvFilename = csvFilename;
         }
 
-       
+        
          public void WriteUserID(User user)
          {
             List<string> sUsers = new List<string>();
