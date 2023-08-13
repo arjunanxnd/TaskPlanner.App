@@ -35,8 +35,9 @@
                    TextColor="#0A4480"
                    Margin="20"/>
 
-            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10" IsClippedToBounds="True" WidthRequest="200">
-                <Editor Placeholder="Enter Description"
+            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10" IsClippedToBounds="True">
+                <Editor x:Name="DescriptionEdt"
+                        Placeholder="Enter Description"
                         Margin="10"
                         HeightRequest="100" 
                         FontFamily="Segoe UI"
@@ -45,9 +46,9 @@
             </Frame>
 
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="20">
-                <RadioButton Content="Quiz" CheckedChanged="QuizRadioButton" TextColor="#0A4480" FontAttributes="Bold"/>
-                <RadioButton Content="Midterm" CheckedChanged="MidtermRadioButton" TextColor="#0A4480" FontAttributes="Bold"/>
-                <RadioButton Content="Finals" CheckedChanged="FinalsRadioButton" TextColor="#0A4480" FontAttributes="Bold"/>
+                <RadioButton x:Name="QuizRb" Content="Quiz" IsChecked="True" TextColor="#0A4480" FontAttributes="Bold"/>
+                <RadioButton x:Name="MidTermRb" Content="Midterm" IsChecked="False" TextColor="#0A4480" FontAttributes="Bold"/>
+                <RadioButton x:Name="FinalRb" Content="Finals" IsChecked="False" TextColor="#0A4480" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
             <StackLayout Orientation="Horizontal"

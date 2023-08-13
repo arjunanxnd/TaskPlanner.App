@@ -41,8 +41,9 @@
                    TextColor="#0A4480"
                    Margin="20"/>
 
-                <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10" WidthRequest="200">
-                    <Editor Placeholder="Enter Description"
+            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10">
+                <Editor x:Name="DescriptionEdt"
+                        Placeholder="Enter Description"
                         Margin="10"
                         HeightRequest="100" 
                         FontFamily="Segoe UI"
@@ -88,7 +89,7 @@
 
                 <Button x:Name="DeleteBtn"
                     Text="Delete"
-                    Clicked="OnClickDeleteAssignment"
+                    Clicked="DeleteBtn_Clicked"
                     HorizontalOptions="CenterAndExpand" 
                     BackgroundColor="#0A4480"
                     TextColor="White"
