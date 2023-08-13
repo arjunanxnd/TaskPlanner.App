@@ -29,29 +29,36 @@ public partial class AssignmentPage : ContentPage
 
     private void OnClickAddAssignment(object sender, EventArgs e)
     {
-        foreach (User user in UserRepository.Users)
+        try
         {
-            if (user.userId == UserRepository.CurrentUID)
-                _user = user;
-        }
+            foreach (User user in UserRepository.Users)
+            {
+                if (user.userId == UserRepository.CurrentUID)
+                    _user = user;
+            }
 
         string sub = SubjectEntry.Text;
         string desccription = DescriptionEdt.Text;
         DateTime dueDate = DueDatePicker.Date;
 
-        Assignment assignment = new Assignment(sub, desccription, dueDate);
-        _user.AddAssignment(assignment);
+            Assignment assignment = new Assignment(sub, desccription, dueDate);
+            _user.AddAssignment(assignment);
 
-        foreach ( Assignment assignment1 in _user.AssignmentList)
-        {
-            if(assignment1 == assignment)
-            {
-                DisplayAlert("Info", $"{assignment} added", "OK");
-            }
+            //foreach (Assignment assignment1 in _user.AssignmentList)
+            //{
+            //    if (assignment1 == assignment)
+            //    {
+                    DisplayAlert("Info", $"{assignment} added", "OK");
+            //    }
+            //}
+
+            AssignmentCategoryPicker.ItemsSource = null;
+            AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
         }
-
-        AssignmentCategoryPicker.ItemsSource = null;
-        AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
+        catch (Exception ex)
+        {
+            DisplayAlert("Error", $"{ex}", "OK");
+        }
 
         Calendar.SelectedDates.Clear();
 

@@ -35,19 +35,19 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="Setting" FlyoutItemIsVisible="True">
-        <ShellContent
-            Title="Assignment"
-            ContentTemplate="{DataTemplate local:SettingsPage}"
-            Route="SettingsPage"
-            />
-    </FlyoutItem>
-
     <FlyoutItem Title="General" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:GeneralPage}"
             Route="GeneralPage"
+            />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Setting" FlyoutItemIsVisible="True">
+        <ShellContent
+            Title="Assignment"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Route="SettingsPage"
             />
     </FlyoutItem>
 

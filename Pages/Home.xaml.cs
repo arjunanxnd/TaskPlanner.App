@@ -9,7 +9,7 @@ using Mopups.Services;
 
 namespace TaskPlanner.Pages;
 
-public partial class Home : ContentPage, INotifyPropertyChanged
+public partial class Home : ContentPage
 {
     User _user;
     private string _strAccess;
@@ -50,41 +50,10 @@ public partial class Home : ContentPage, INotifyPropertyChanged
             if (user.userId == UserRepository.CurrentUID)
                 _user = user;
         }
-        DisplayAlert("Info", $"Current user is {_user}", "OK");
+        //DisplayAlert("Info", $"Current user is {_user}", "OK");
 
-        if(StrAccess == "ASSIGNMENT")
-        {
-            ContentsView.ItemsSource = null;
-            ContentsView.ItemsSource = CurrentAssignmentaList;
-        }
-        else if(StrAccess == "EXAM")
-        {
-            ContentsView.ItemsSource = null;
-            ContentsView.ItemsSource = CurrentExamList;
-        }
-        else if(StrAccess == "GENERAL")
-        {
-            ContentsView.ItemsSource = null;
-            ContentsView.ItemsSource = CurrentGeneralList;
-        }
+        MopupService.Instance.PushAsync(new MyPopups(StrAccess, CurrentAssignmentaList, CurrentExamList, CurrentGeneralList));
 
-        MopupService.Instance.PushAsync(new MyPopups());
-
-        //switch (StrAccess)
-        //{
-        //    case "ASSIGNMENT":
-        //        ContentsView.ItemsSource = null;
-        //        ContentsView.ItemsSource = CurrentAssignmentaList;
-        //        break;
-        //    case "EXAM":
-        //        ContentsView.ItemsSource = null;
-        //        ContentsView.ItemsSource = CurrentExamList;
-        //        break;
-        //    case "GENERAL":
-        //        ContentsView.ItemsSource = null;
-        //        ContentsView.ItemsSource = CurrentGeneralList;
-        //        break;
-        //}
 
     }
 }
