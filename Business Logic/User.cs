@@ -16,7 +16,7 @@ namespace TaskPlanner.Business_Logic
         private string _password;
         private string _email;
 
-        public User(string userName, string firstAndLastName, string e_mail, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
+        public User(int userId, string userName, string firstAndLastName, string e_mail, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
         {
            UserId = userId;
             UserName = userName;

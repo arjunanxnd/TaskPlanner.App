@@ -6,7 +6,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using TaskPlanner.Data_Access;
 
 namespace TaskPlanner.Business_Logic
 {
@@ -40,36 +39,7 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
-        public void SaveUser(string filePath)
-        {
-            JSONDataManager dataManger = new JSONDataManager();
-            dataManger.JsonFile = filePath;
-            dataManger.WriteUserInformation(Users);
-        }
-
-        public void ReadUsers(string filePath)
-        {
-            JSONDataManager dataManger = new JSONDataManager();
-            dataManger.JsonFile = filePath;
-            try
-            {
-                _users = dataManger.LoadUsers();
-            }
-            catch (FileNotFoundException ex)
-            {
-                _users = new List<User>(); 
-            }
-        }
-
-        public List<User> LoadUsers(string filePath)
-        {
-            List<User> users = new List<User>();
-            using (FileStream reader = new FileStream(filePath, FileMode.Open))
-            {
-                users = JsonSerializer.Deserialize<List<User>>(reader);
-            }
-            return users;
-        }
+        
 
     }
 }
