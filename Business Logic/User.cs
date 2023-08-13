@@ -10,9 +10,9 @@ namespace TaskPlanner.Business_Logic
 {
     public class User
     {
-        private ObservableCollection<Assignment>? _assignments;
-        private ObservableCollection<Exam>? _exams;
-        public ObservableCollection<General>? _generals;
+        private ObservableCollection<Assignment> _assignments;
+        private ObservableCollection<Exam> _exams;
+        public ObservableCollection<General> _generals;
 
 
         public int userId;

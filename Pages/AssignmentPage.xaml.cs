@@ -26,29 +26,36 @@ public partial class AssignmentPage : ContentPage
 
     private void OnClickAddAssignment(object sender, EventArgs e)
     {
-        foreach (User user in UserRepository.Users)
+        try
         {
-            if (user.userId == UserRepository.CurrentUID)
-                _user = user;
-        }
-
-        string sub = SubjectEntry.Text;
-        string desccription = DescriptionEdt.Text;
-        DateOnly dueDate = DateOnly.FromDateTime(DueDatePicker.Date);
-
-        Assignment assignment = new Assignment(sub, desccription, dueDate);
-        _user.AddAssignment(assignment);
-
-        foreach ( Assignment assignment1 in _user.AssignmentList)
-        {
-            if(assignment1 == assignment)
+            foreach (User user in UserRepository.Users)
             {
-                DisplayAlert("Info", $"{assignment} added", "OK");
+                if (user.userId == UserRepository.CurrentUID)
+                    _user = user;
             }
-        }
 
-        AssignmentCategoryPicker.ItemsSource = null;
-        AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
+            string sub = SubjectEntry.Text;
+            string desccription = DescriptionEdt.Text;
+            DateOnly dueDate = DateOnly.FromDateTime(DueDatePicker.Date);
+
+            Assignment assignment = new Assignment(sub, desccription, dueDate);
+            _user.AddAssignment(assignment);
+
+            //foreach (Assignment assignment1 in _user.AssignmentList)
+            //{
+            //    if (assignment1 == assignment)
+            //    {
+                    DisplayAlert("Info", $"{assignment} added", "OK");
+            //    }
+            //}
+
+            AssignmentCategoryPicker.ItemsSource = null;
+            AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error", $"{ex}", "OK");
+        }
 
     }
 

@@ -40,11 +40,7 @@
             HorizontalOptions="CenterAndExpand"
             />
 
-        <ListView
-            x:Name="ContentsView"
-            >
-
-        </ListView>
+        
 
     </VerticalStackLayout>
 </ContentPage>
