@@ -24,6 +24,7 @@
             HorizontalOptions="EndAndExpand"
             />
 
+
         <Button
             x:Name="CheckBtn"
             Text="Check current user"

@@ -9,7 +9,7 @@
     </ContentPage.BackgroundColor>
 
     <ScrollView>
-        <StackLayout HorizontalOptions="CenterAndExpand" Padding="20" Orientation="Vertical">
+        <StackLayout HorizontalOptions="CenterAndExpand" Padding="20" >
             <Label
                 Text="Hello Again!"
                 HorizontalOptions="Center"
@@ -30,33 +30,32 @@
                    HeightRequest="200"
                    HorizontalOptions="Center"
                    Margin="0,40"/>
-
+            
             <Label Text="Log In"
                    HorizontalOptions="Center"
                    FontSize="Large"
                    TextColor="#0A4480"
+                   TextDecorations="Underline"
                    Margin="0,20"
                    FontFamily="Segoe UI"/>
 
-            <StackLayout HorizontalOptions="CenterAndExpand" Margin="10">
+            <StackLayout HorizontalOptions="Center" Margin="10">
                 <Entry x:Name="UserNameEntry" 
                        Placeholder="Enter your Username" 
-                       HorizontalOptions="FillAndExpand"
-                       Margin="10"
-                       FontFamily="Segoe UI"
-                       BackgroundColor="White" 
-                       TextColor="#0A4480"
-                       />   
-
-                    <Entry x:Name="PasswordEntry" 
-                       Placeholder="Enter your Password" 
-                       HorizontalOptions="FillAndExpand"
-                       IsPassword="True"
+                       HorizontalOptions="Center"
                        Margin="10"
                        FontFamily="Segoe UI"
                        BackgroundColor="White" 
                        TextColor="#0A4480"/>
 
+                <Entry x:Name="PasswordEntry" 
+                       Placeholder="Enter your Password" 
+                       HorizontalOptions="Center"
+                       IsPassword="True"
+                       Margin="10"
+                       FontFamily="Segoe UI"
+                       BackgroundColor="White" 
+                       TextColor="#0A4480"/>
             </StackLayout>
 
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="20" >
@@ -69,7 +68,7 @@
                         Padding="10,5"
                         WidthRequest="150"/>
             </HorizontalStackLayout>
-            
+
             <Label Text="Don't have an account? Sign Up"
                    HorizontalOptions="Center"
                    TextColor="#0A4480"
@@ -79,6 +78,7 @@
                     <TapGestureRecognizer Tapped="SignUpLabel_Tapped"/>
                 </Label.GestureRecognizers>
             </Label>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.GeneralPage"
+             xmlns:control="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
              Title="GeneralPage">
 
     <ContentPage.BackgroundColor>
@@ -18,6 +19,13 @@
                    TextColor="#0A4480"
                    FontFamily="Segoe UI"/>
 
+            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10"
+       HeightRequest="400" WidthRequest="400">
+                <control:SfCalendar>
+
+                </control:SfCalendar>
+            </Frame>
+
             <Entry x:Name="TitleEntry" 
                    Placeholder="Enter Title" 
                    PlaceholderColor="#0A4480"
@@ -29,7 +37,7 @@
                    Margin="20"/>
 
 
-            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" CornerRadius="10" WidthRequest="250">
+            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" CornerRadius="10" WidthRequest="200">
                 <Editor Placeholder="Enter Description"
                         Margin="10"
                         HeightRequest="100"

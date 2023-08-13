@@ -1,12 +1,17 @@
-﻿namespace TaskPlanner.Pages;
+﻿using System.Collections.ObjectModel;
+using TaskPlanner.Business_Logic;
+
+namespace TaskPlanner.Pages;
 
 public partial class AssignmentPage : ContentPage
 {
-	public AssignmentPage()
+    
+
+    public AssignmentPage()
 	{
 		InitializeComponent();
 	}
-
+    
     private void AssignmentCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
 
@@ -21,4 +26,23 @@ public partial class AssignmentPage : ContentPage
     {
 
     }
+
+    private void OnCalendarTapped(object sender, Syncfusion.Maui.Calendar.CalendarTappedEventArgs e)
+    {
+        var selectedDate = e.Date;
+        var calendarElement = e.Element;
+
+        
+
+    }
+
+    private void DueDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        var selectedDate = e.NewDate;
+        Calendar.SelectedDates.Clear();
+        Calendar.SelectedDates.Add(selectedDate);
+    }
 }
+
+    
+

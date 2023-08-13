@@ -1,15 +1,16 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.AssignmentPage"
+             xmlns:control="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
              Title="AssignmentPage">
 
     <ContentPage.BackgroundColor>
         <Color>#EAEAEA</Color>
     </ContentPage.BackgroundColor>
-
     <ScrollView>
         <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
-            <Label Text="Assignment"
+
+            <Label Text="ASSIGNMENT"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
                    FontSize="Header"
@@ -17,7 +18,20 @@
                    TextColor="#0A4480"
                    FontFamily="Segoe UI"/>
 
-            <Entry x:Name="SubjectEntry" 
+            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10"
+       HeightRequest="400" WidthRequest="400">
+                <control:SfCalendar 
+                    x:Name="Calendar"
+                    SelectionMode="Multiple"
+                    Tapped="OnCalendarTapped">
+
+                </control:SfCalendar>
+            </Frame>
+
+            <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+
+
+                <Entry x:Name="SubjectEntry" 
                    Placeholder="Enter Subject" 
                    PlaceholderColor="#0A4480"
                    HorizontalOptions="CenterAndExpand"
@@ -27,31 +41,31 @@
                    TextColor="#0A4480"
                    Margin="20"/>
 
-            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10">
-                <Editor Placeholder="Enter Description"
+                <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10" WidthRequest="200">
+                    <Editor Placeholder="Enter Description"
                         Margin="10"
                         HeightRequest="100" 
                         FontFamily="Segoe UI"
                         TextColor="#0A4480"
-                        PlaceholderColor="#0A4480"
-                        />
-            </Frame>
+                        PlaceholderColor="#0A4480"/>
+                </Frame>
 
-            <StackLayout Orientation="Horizontal"
+                <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="10,5"
                          Margin="20">
-                <Label Text="Due Date:"
+                    <Label Text="Due Date:"
                        VerticalTextAlignment="Center"
                        TextColor="#0A4480" 
                        FontFamily="Segoe UI"/>
 
-                <DatePicker x:Name="DueDatePicker"
+                    <DatePicker x:Name="DueDatePicker"
+                                DateSelected="DueDatePicker_DateSelected"
                             HorizontalOptions="CenterAndExpand"
                             TextColor="#0A4480" />
-            </StackLayout>
+                </StackLayout>
 
-            <Button x:Name="AddBtn"
+                <Button x:Name="AddBtn"
                     Text="Add"
                     Clicked="OnClickAddAssignment"
                     HorizontalOptions="CenterAndExpand" 
@@ -61,8 +75,8 @@
                     CornerRadius="15"
                     Margin="20"/>
 
-            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" Margin="20">
-                <Picker x:Name="AssignmentCategoryPicker"
+                <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" Margin="20">
+                    <Picker x:Name="AssignmentCategoryPicker"
                         SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
                         HorizontalOptions="CenterAndExpand"
                         FontFamily="Segoe UI"
@@ -70,9 +84,9 @@
                         Title="Please select the assignment you wish to Delete"
                         TitleColor="#0A4480"
                         />
-            </Frame>
+                </Frame>
 
-            <Button x:Name="DeleteBtn"
+                <Button x:Name="DeleteBtn"
                     Text="Delete"
                     Clicked="OnClickDeleteAssignment"
                     HorizontalOptions="CenterAndExpand" 
@@ -80,6 +94,7 @@
                     TextColor="White"
                     WidthRequest="120"
                     CornerRadius="15"/>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

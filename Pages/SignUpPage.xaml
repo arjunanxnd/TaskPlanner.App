@@ -3,59 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.SignUpPage"
              Title="SignUpPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="TMS"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="CenterAndExpand"
-            FontAttributes="Bold"
-            FontSize="35"/>
-                <Label Text="             " FontSize="30"/>
 
-        <Label
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
+    
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
             Text="Sign-Up"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="CenterAndExpand"
-            FontSize="23"
-            />        <Label Text="______________________________________________" FontSize="5" HorizontalOptions="CenterAndExpand"/>
-           
-        <Label Text="             " FontSize="15"/>
-
-        <Entry
-            x:Name="FirstALastEntry"
-            Placeholder="First And Last Name"
-            HorizontalOptions="CenterAndExpand"
-            WidthRequest="150"
-            />
-                <Label Text="             " FontSize="5"/>
-
-        <Entry
-            x:Name="UsernameEntry"
-            Placeholder="Username"
-            HorizontalOptions="CenterAndExpand"
-            WidthRequest="150"
-
-            />
-                <Label Text="             " FontSize="20"/>
-
-        <Label Text="Please enter your gmail Id:" FontAttributes="Bold" HorizontalOptions="Center"
-               />
-                <Label Text="             " FontSize="7"/>
-        <Entry
-            x:Name="EmailEntry"
-            Placeholder="Email"
             HorizontalOptions="Center"
-            WidthRequest="150"
-            />
-                <Label Text="             " FontSize="20"/>
+            FontAttributes="Bold"
+            TextDecorations="Underline"
+            FontSize="Header"
+            Margin="40"
+            TextColor="#0A4480" 
+            FontFamily="Segoe UI"/>
 
-        
-        <Button
-            x:Name="ToPsswrdPgBtn"
-            Text="Next"
-            HorizontalOptions="Center"
-            Clicked="ToPsswrdPgBtn_Clicked"
-            />
 
-    </VerticalStackLayout>
+            <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            WidthRequest="400"
+            HeightRequest="400">
+                <Border BackgroundColor="Transparent" Padding="8">
+                    <StackLayout Spacing="10">
+                        <Entry
+                        x:Name="FirstALastEntry"
+                        Placeholder="Please enter your First And Last Name"
+                        PlaceholderColor="#0A4480"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="250"
+                        BackgroundColor="Transparent"
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"
+                        Margin="20"/>   
+
+                        <Entry
+                        x:Name="UsernameEntry"
+                        Placeholder="Please enter Username"
+                        PlaceholderColor="#0A4480"
+                        IsTextPredictionEnabled="True"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="200"
+                        BackgroundColor="Transparent"
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"
+                        Margin="20"/>
+
+                        <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="Please enter your gmail Id:"
+                        PlaceholderColor="#0A4480"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="200"
+                        BackgroundColor="Transparent"
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"
+                        Margin="30"/>
+
+
+                        <Button
+                        x:Name="ToPsswrdPgBtn"
+                        Text="Next"
+                        Clicked="ToPsswrdPgBtn_Clicked"
+                        HorizontalOptions="CenterAndExpand" 
+                        BackgroundColor="#0A4480"
+                        TextColor="White"
+                        WidthRequest="120"
+                        CornerRadius="15"/>
+                    </StackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
