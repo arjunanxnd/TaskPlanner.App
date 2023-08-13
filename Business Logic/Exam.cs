@@ -22,7 +22,7 @@ namespace TaskPlanner.Business_Logic
 
         }
 
-        public Exam(string subject, string description, DateOnly dueDate, ExamType exam)
+        public Exam(string subject, string description, DateTime dueDate, ExamType exam)
         {
             Subject = subject;
             Description = description;

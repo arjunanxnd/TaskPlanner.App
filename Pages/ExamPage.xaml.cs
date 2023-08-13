@@ -23,7 +23,7 @@ public partial class ExamPage : ContentPage
 
         string sub = SubjectEntry.Text;
         string description = DescriptionEdt.Text;
-        DateOnly dueDate = DateOnly.FromDateTime(DueDatePicker.Date);
+        DateTime dueDate = DueDatePicker.Date;
         ExamType etype = ExamType.Quiz;
 
         if (string.IsNullOrEmpty(sub) || string.IsNullOrEmpty(description))

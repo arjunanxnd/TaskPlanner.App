@@ -37,7 +37,7 @@ public partial class AssignmentPage : ContentPage
 
         string sub = SubjectEntry.Text;
         string desccription = DescriptionEdt.Text;
-        DateOnly dueDate = DateOnly.FromDateTime(DueDatePicker.Date);
+        DateTime dueDate = DueDatePicker.Date;
 
         Assignment assignment = new Assignment(sub, desccription, dueDate);
         _user.AddAssignment(assignment);
@@ -53,13 +53,33 @@ public partial class AssignmentPage : ContentPage
         AssignmentCategoryPicker.ItemsSource = null;
         AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
 
+        Calendar.SelectedDates.Clear();
+
+        foreach (Assignment assignment2 in _user.AssignmentList)
+        {
+            Calendar.SelectedDates.Add(assignment.DueDate);
+        }
+
+        /*Calendar.SelectedDates.Clear();
+        Calendar.SelectedDates.Add(dueDate);*/
+
     }
 
     private void OnClickDeleteAssignment(object sender, EventArgs e)
     {
 
     }
+
+    private void OnCalendarTapped(object sender, Syncfusion.Maui.Calendar.CalendarTappedEventArgs e)
+    {
+        
+    }
+
+    private void DueDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+    {
+        
+    }
 }
 
-    
+
 

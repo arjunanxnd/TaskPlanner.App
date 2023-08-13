@@ -9,7 +9,7 @@ namespace TaskPlanner.Business_Logic
     public class Assignment : Assessment
     {
 
-        public Assignment(string subject, string description, DateOnly dueDate)
+        public Assignment(string subject, string description, DateTime dueDate)
         {
             Subject = subject;
             Description = description;
