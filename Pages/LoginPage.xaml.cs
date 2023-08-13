@@ -7,7 +7,7 @@ public partial class LoginPage : ContentPage
     public LoginPage()
     {
         InitializeComponent();
-        UserRepository.AddUser(new User(0,"Demo", "XYZ", "xyz@gmail.com", "Demo123", null, null, null));
+        UserRepository.AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123", null, null, null));
     }
 
     private async void LoginBtn_Clicked(System.Object sender, System.EventArgs e)
@@ -24,7 +24,7 @@ public partial class LoginPage : ContentPage
             {
                 if (user.UserName == uName && user.Password == pass)
                 {
-                    UserRepository.CurrentUID = user.UserId;
+                    UserRepository.CurrentUID = user.userId;
                     await DisplayAlert("Welcome", $"{user.FirstAndLastName}", "OK");
                     await Shell.Current.GoToAsync("////Home");
                     Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
