@@ -17,4 +17,9 @@ public partial class GeneralPage : ContentPage
     {
 
     }
+
+    private void ExamCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

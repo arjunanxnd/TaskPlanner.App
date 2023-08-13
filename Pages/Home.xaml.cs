@@ -21,7 +21,7 @@ public partial class Home : ContentPage
         //string csvFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, _csvFileName);
         //_userDataManger = new JSONDataManager(jsonFilePath);
         userId = FilePath.CurrentUserId;
-        _userRepository.Users = _userRepository.LoadUsers(FilePath.JsonFilename);
+        _userRepository.ReadUsers(FilePath.JsonFilename);
 
         foreach (User user in _userRepository.Users)
         {
@@ -58,6 +58,8 @@ public partial class Home : ContentPage
         }
     }
 
+    private void ViewBtn_Clicked(object sender, EventArgs e)
+    {
 
-
+    }
 }

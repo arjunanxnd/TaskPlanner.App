@@ -10,12 +10,14 @@ public partial class SettingsPage : ContentPage
 
     }
 
-    private void OnClickNavigateToHome(object sender, EventArgs e)
+    
+
+    private void OnClickUpdate(object sender, EventArgs e)
     {
 
     }
 
-    private void OnClickUpdate(object sender, EventArgs e)
+    private void OnClickLogOut(object sender, EventArgs e)
     {
 
     }

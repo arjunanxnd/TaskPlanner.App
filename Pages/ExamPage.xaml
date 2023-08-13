@@ -2,49 +2,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.ExamPage"
              Title="ExamPage">
-
-    <ContentPage.BackgroundColor>
+    
+        <ContentPage.BackgroundColor>
         <Color>#EAEAEA</Color>
     </ContentPage.BackgroundColor>
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
             <Label Text="Exam"
                    HorizontalOptions="Center"
                    FontAttributes="Bold"
                    FontSize="Header"
                    Margin="40"
-                   TextColor="#0A4480" />
+                   TextColor="#0A4480" 
+                   FontFamily="Segoe UI"/>
 
             <Entry x:Name="SubjectEntry" 
-                   Placeholder="Enter Subject" 
+                   Placeholder="Enter Subject"
+                   PlaceholderColor="#0A4480"
                    HorizontalOptions="CenterAndExpand"
-                   Margin="10"
-                   WidthRequest="200"/>
+                   WidthRequest="200"
+                   BackgroundColor="Transparent"
+                   FontFamily="Segoe UI"
+                   TextColor="#0A4480"
+                   Margin="20"/>
 
-            <Frame BorderColor="LightGray" CornerRadius="10">
+            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10" IsClippedToBounds="True">
                 <Editor Placeholder="Enter Description"
                         Margin="10"
-                        HeightRequest="100" />
+                        HeightRequest="100" 
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"
+                        PlaceholderColor="#0A4480"/>
             </Frame>
 
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <RadioButton Content="Quiz" CheckedChanged="QuizRadioButton" TextColor="#0A4480" />
-                <RadioButton Content="Midterm" CheckedChanged="MidtermRadioButton" TextColor="#0A4480" />
-                <RadioButton Content="Finals" CheckedChanged="FinalsRadioButton" TextColor="#0A4480" />
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" Margin="20">
+                <RadioButton Content="Quiz" CheckedChanged="QuizRadioButton" TextColor="#0A4480" FontAttributes="Bold"/>
+                <RadioButton Content="Midterm" CheckedChanged="MidtermRadioButton" TextColor="#0A4480" FontAttributes="Bold"/>
+                <RadioButton Content="Finals" CheckedChanged="FinalsRadioButton" TextColor="#0A4480" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="10,5"
                          Margin="10">
+                
                 <Label Text="Due Date: "
-                       VerticalTextAlignment="Center"
                        TextColor="#0A4480"
-                       WidthRequest="90" />
+                       VerticalTextAlignment="Center"
+                       WidthRequest="90" 
+                       FontFamily="Segoe UI"
+                       HorizontalOptions="End"/>
 
                 <DatePicker x:Name="DueDatePicker"
-                            HorizontalOptions="StartAndExpand"
+                            HorizontalOptions="Center"
                             TextColor="#0A4480"
                             WidthRequest="200"/>
             </StackLayout>
@@ -55,19 +66,18 @@
                     HorizontalOptions="CenterAndExpand" 
                     BackgroundColor="#0A4480"
                     TextColor="White"
-                    WidthRequest="120"/>
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
 
-            <Label Text="Please select the exam you wish to Delete from the Picker"
-                   HorizontalOptions="Center"
-                   TextColor="#0A4480"
-                   Margin="10"/>
-
-            <Frame BorderColor="LightGray" IsClippedToBounds="True">
+            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" Margin="20">
                 <Picker x:Name="ExamCategoryPicker"
                         SelectedIndexChanged="ExamCategoryPicker_SelectedIndexChanged"
                         HorizontalOptions="CenterAndExpand"
-                        WidthRequest="200"
-                        TextColor="#0A4480" />
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"         
+                        Title="Please select the assignment you wish to Delete"
+                        TitleColor="#0A4480" />
             </Frame>
 
             <Button x:Name="DeleteBtn"
@@ -76,7 +86,8 @@
                     HorizontalOptions="CenterAndExpand" 
                     BackgroundColor="#0A4480"
                     TextColor="White"
-                    WidthRequest="120"/>
+                    WidthRequest="120"
+                    CornerRadius="15"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

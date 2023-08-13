@@ -1,5 +1,4 @@
 ﻿namespace TaskPlanner.Pages;
-
 using System.Reflection;
 using TaskPlanner.Business_Logic;
 using TaskPlanner.Data_Access;
@@ -50,7 +49,8 @@ public partial class LoginPage : ContentPage
         }
     }
 
-    private async void SignUpBtn_Clicked(System.Object sender, System.EventArgs e)
+    
+    private async void SignUpLabel_Tapped(object sender, TappedEventArgs e)
     {
         SignUpPage signUpPage = new SignUpPage(_repository);
         await Navigation.PushAsync(signUpPage);

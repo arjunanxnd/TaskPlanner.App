@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TaskPlanner.Data_Access;
 
@@ -15,11 +16,11 @@ namespace TaskPlanner.Business_Logic
         public List<User> Users { get {  return _users; } set { _users = value; } }
 
         public int UserID { get; set;}
-
+        
         public UserRepository()
         {
             _users = new List<User>();
-            AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
+            AddUser(new User(1,"Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
             SaveUser(FilePath.JsonFilename);
         }
 
@@ -65,15 +66,18 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
-        public List<User> LoadUsers(string filePath)
+        /*public List<User> LoadUsers(string filePath)
         {
             List<User> users = new List<User>();
-            using (FileStream reader = new FileStream(filePath, FileMode.Open))
+           
+            
+            using (FileStream reader = new FileStream(filePath, FileMode.OpenOrCreate))
             {
+                
                 users = JsonSerializer.Deserialize<List<User>>(reader);
             }
             return users;
-        }
+        }*/
 
     }
 }

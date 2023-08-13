@@ -3,32 +3,104 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.SettingsPage"
              Title="SettingsPage">
-    <VerticalStackLayout>
-        <Label
-            Text="Settings"
-            />
-        <Label Text="Name"/>
-            <Entry x:Name="TitleEntry" Placeholder="Enter Name"/>
 
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
 
-            <Label Text="Password"/>
-            <Entry x:Name="PasswordEntry" Placeholder="Enter New Password"/>
+    <ScrollView>
+        <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+            <Label Text="Settings"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="Header"
+                   Margin="40"
+                   TextColor="#0A4480" 
+                   FontFamily="Segoe UI"/>
 
-            <Label Text="Email"/>
-        <Entry x:Name="EmailEntry" Placeholder="Enter your registered Email"/>
+            <Label Text="Update your information:"
+                   HorizontalOptions="Center"
+                   FontAttributes="Italic"
+                   FontSize="Subtitle"
+                   TextColor="#0A4480"
+                   Margin="0,0,0,20"
+                   FontFamily="Segoe UI"/>
 
-        <HorizontalStackLayout>
-            <Button
-        x:Name="UpdateBtn"
-        Text="Update"
-        Clicked="OnClickUpdate"
-        />
-            <Button
-        x:Name="HomeBtn"
-        Text="Home"
-        Clicked="OnClickNavigateToHome"
-        />
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
-       
+            <Label Text="Update User Name" 
+                   TextColor="#0A4480" 
+                   FontFamily="Segoe UI"/>
+            <Entry x:Name="UserNameEntry" 
+                   Placeholder="Enter New UserName" 
+                   PlaceholderColor="Black"
+                   FontFamily="Segoe UI"
+                   TextColor="Black"
+                   Margin="0,0,0,20"/>
+
+            <Label Text="Update Name" 
+                   TextColor="#0A4480" 
+                   FontFamily="Segoe UI"/>
+            <Entry x:Name="NameEntry" 
+                   Placeholder="Enter New Name" 
+                   PlaceholderColor="Black"
+                   FontFamily="Segoe UI"
+                   TextColor="Black"
+                   Margin="0,0,0,20"/>
+
+            <Label Text="Update Password" 
+                   TextColor="#0A4480"
+                   FontFamily="Segoe UI"/>
+            <Entry x:Name="PasswordEntry" 
+                   Placeholder="Enter New Password" 
+                   IsPassword="True" 
+                   PlaceholderColor="Black"
+                   FontFamily="Segoe UI"
+                   TextColor="Black"
+                   Margin="0,0,0,20"/>
+
+            <Label Text="Update Email" 
+                   TextColor="#0A4480" 
+                   FontFamily="Segoe UI"/>
+            
+                <Entry x:Name="EmailEntry" 
+                   Placeholder="Enter New Email" 
+                   PlaceholderColor="Black"
+                   FontFamily="Segoe UI"
+                   TextColor="Black"
+                   Margin="0,0,0,20"/>
+            
+            
+
+            <Label Text="Note: You can update one or more fields at a time. For eg: If you only want to update your password, just include the new password and leave other fields blank."
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Caption"
+                   TextColor="#707070"
+                   Margin="10,20"
+                   FontFamily="Segoe UI"/>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Button
+                    x:Name="UpdateBtn"
+                    Text="Update"
+                    Clicked="OnClickUpdate"
+                    HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
+
+                <Button
+                    x:Name="LogOutBtn"
+                    Text="Log Out"
+                    Clicked="OnClickLogOut"
+                    HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+    </ScrollView>
+
 </ContentPage>

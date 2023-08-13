@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace TaskPlanner.Business_Logic
 {
     public class User
@@ -15,8 +16,13 @@ namespace TaskPlanner.Business_Logic
         private string _password;
         private string _email;
 
-        public User(string userName, string firstAndLast, string email, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
+        public User()
         {
+            
+        }
+        public User(int userId, string userName, string firstAndLast, string email, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
+        {
+           UserId = userId;
             UserName = userName;
             FirstAndLastName = firstAndLast;
             E_mail = email;

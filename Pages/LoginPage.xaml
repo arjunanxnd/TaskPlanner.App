@@ -3,56 +3,82 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.LoginPage"
              Title="">
-    <VerticalStackLayout>
-        <Label Text="    " FontSize="20"/>
-        <Image
-            Source="task.jpg"
-            HeightRequest="300"
-            HorizontalOptions="Center"
-            />
+    
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
 
-        <Label Text="             " FontSize="40"/>
-        <Label
-            Text="Login"
-            VerticalOptions="StartAndExpand"
-            HorizontalOptions="Center"
-            FontSize="23"
-            /><Label Text="______________________________________________" FontSize="5" HorizontalOptions="CenterAndExpand"/>
-        <Label Text=" " FontSize="20"
-               HorizontalOptions="Center"/>
+    <ScrollView>
+        <StackLayout HorizontalOptions="CenterAndExpand" Padding="20" Orientation="Vertical">
+            <Label
+                Text="Hello Again!"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="Header"
+                Margin="20"
+                TextColor="#0A4480" 
+                FontFamily="Segoe UI"/>
+            <Label
+                Text="Welcome back you've been missed!"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="Subtitle"
+                TextColor="#0A4480" 
+                FontFamily="Segoe UI"/>
+            
+                <Image Source="task.jpg"
+                   HeightRequest="200"
+                   HorizontalOptions="Center"
+                   Margin="0,40"/>
 
-        <Entry
-            x:Name="UserNameEntry"
-            Placeholder="Username"
-            HorizontalOptions="Center"
-            WidthRequest="150"
-            />
-                <Label Text="             " FontSize="10"/>
+            <Label Text="Log In"
+                   HorizontalOptions="Center"
+                   FontSize="Large"
+                   TextColor="#0A4480"
+                   Margin="0,20"
+                   FontFamily="Segoe UI"/>
 
-        <Entry
-            x:Name="PasswordEntry"
-            Placeholder="Password"
-            HorizontalOptions="CenterAndExpand"
-            WidthRequest="150"
-            />
-                <Label Text="             " FontSize="30"/>
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="10">
+                <Entry x:Name="UserNameEntry" 
+                       Placeholder="Enter your Username" 
+                       HorizontalOptions="FillAndExpand"
+                       Margin="10"
+                       FontFamily="Segoe UI"
+                       BackgroundColor="White" 
+                       TextColor="#0A4480"
+                       />   
 
-        <HorizontalStackLayout
-            Grid.ColumnSpan="3"
-            Grid.Row="6"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Button
-                x:Name="SignUpBtn"
-                Text="Sign Up"
-                Clicked="SignUpBtn_Clicked"
-            />
-            <Label Text="           "/>
-            <Button
-                x:Name="LoginBtn"
-                Text="Log-in"
-                Clicked="LoginBtn_Clicked"
-            />
+                    <Entry x:Name="PasswordEntry" 
+                       Placeholder="Enter your Password" 
+                       HorizontalOptions="FillAndExpand"
+                       IsPassword="True"
+                       Margin="10"
+                       FontFamily="Segoe UI"
+                       BackgroundColor="White" 
+                       TextColor="#0A4480"/>
+
+            </StackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="20" >
+                <Button x:Name="LoginBtn"
+                        Text="Log-in"
+                        Clicked="LoginBtn_Clicked"
+                        BackgroundColor="#0A4480"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Padding="10,5"
+                        WidthRequest="150"/>
             </HorizontalStackLayout>
-    </VerticalStackLayout>
+            
+            <Label Text="Don't have an account? Sign Up"
+                   HorizontalOptions="Center"
+                   TextColor="#0A4480"
+                   Margin="10"
+                   FontFamily="Segoe UI">   
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SignUpLabel_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

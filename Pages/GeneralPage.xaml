@@ -3,86 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.GeneralPage"
              Title="GeneralPage">
-    <ContentPage.Resources>
-        <Style TargetType="Label" x:Key="CommonLabelStyle">
-            <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="VerticalOptions" Value="Center"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        <Style TargetType="Label" x:Key="FieldLabelStyle" BasedOn="{StaticResource CommonLabelStyle}">
-            <Setter Property="TextColor" Value="LightBlue"/>
-            <Setter Property="HorizontalOptions" Value="End"/>
-        </Style>
-        <Style TargetType="Label" x:Key="HeaderLabelStyle" BasedOn="{StaticResource CommonLabelStyle}">
-            <Setter Property="TextColor" Value="DarkBlue"/>
-            <Setter Property="FontSize" Value="Header"/>
-            <Setter Property="HorizontalOptions" Value="Center"/>
-        </Style>
-    </ContentPage.Resources>
 
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
+    
     <ScrollView>
-        <Grid
-            RowDefinitions="2*,*,*,*,*,2*"
-            ColumnDefinitions="*,3*">
+        <StackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
             <Label Text="General"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"
                    FontAttributes="Bold"
-                   Grid.ColumnSpan="2"
-                   Grid.Column="0"
-                   Style="{StaticResource HeaderLabelStyle}"/>
-
-            <Label Text="Title" 
-                       Grid.Column="0"
-                       Grid.Row="1"
-                   Style="{StaticResource FieldLabelStyle}"/>
+                   FontSize="Header"
+                   Margin="50"
+                   TextColor="#0A4480"
+                   FontFamily="Segoe UI"/>
 
             <Entry x:Name="TitleEntry" 
-                       Grid.Row="1"
-                       Grid.Column="1" 
-                       Placeholder="Enter Title" 
-                       HorizontalOptions="FillAndExpand"/>
+                   Placeholder="Enter Title" 
+                   PlaceholderColor="#0A4480"
+                   HorizontalOptions="CenterAndExpand"
+                   WidthRequest="200"
+                   BackgroundColor="Transparent"
+                   FontFamily="Segoe UI"
+                   TextColor="#0A4480"
+                   Margin="20"/>
 
 
-                <Label Text="Description" 
-                       Grid.Column="0"
-                       Grid.Row="2"
-                       Style="{StaticResource FieldLabelStyle}"/>
-                <Entry x:Name="DescriptionEntry" 
-                        Grid.Column="1"
-                        Grid.Row="2"
-                       Placeholder="Enter Description" 
-                       HorizontalOptions="FillAndExpand"/>
+            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" CornerRadius="10" WidthRequest="250">
+                <Editor Placeholder="Enter Description"
+                        Margin="10"
+                        HeightRequest="100"
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"
+                        PlaceholderColor="#0A4480"
+                        />
+            </Frame>
 
-                <Label Text="Work DueDate"
-                       Grid.Column="0"
-                       Grid.Row="3"
-                       Style="{StaticResource FieldLabelStyle}"/>
+                    <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand"
+                         Padding="10,5"
+                         Margin="10">
                 
-                <DatePicker x:Name="DueDatePick"
-                            Grid.Column="1"
-                            Grid.Row="3"/>
+                    <Label Text="Please select the Due Date:"
+                       VerticalTextAlignment="Center"
+                       TextColor="#0A4480" 
+                       FontFamily="Segoe UI"/>
 
-            <HorizontalStackLayout
-                    Spacing="10" 
-                    HorizontalOptions="CenterAndExpand" 
-                    VerticalOptions="CenterAndExpand"
-                    Grid.ColumnSpan="2"
-                Grid.Row="4"
-                    >
-                <Button
+                    <DatePicker x:Name="DueDatePicker"
+                            HorizontalOptions="CenterAndExpand"
+                            TextColor="#0A4480" />
+                </StackLayout>
+
+                    <Button
                 x:Name="AddBtn"
                 Text="Add"
                 Clicked="OnClickAdd"
-                />
+                HorizontalOptions="CenterAndExpand" 
+                BackgroundColor="#0A4480"
+                TextColor="White"
+                WidthRequest="120"
+                CornerRadius="15"
+                Margin="20"/>
 
-                <Button
+            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" Margin="20" WidthRequest="220">
+                <Picker x:Name="ExamCategoryPicker"
+                        SelectedIndexChanged="ExamCategoryPicker_SelectedIndexChanged"
+                        HorizontalOptions="CenterAndExpand"
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"         
+                        Title="Please select the Task Type"
+                        TitleColor="#0A4480"
+                        />
+            </Frame>
+
+            <Button
             x:Name="DeleteBtn"
             Text="Delete"
             Clicked="OnClickDelete"
-            />
-            </HorizontalStackLayout>
-        </Grid>
+            HorizontalOptions="CenterAndExpand" 
+            BackgroundColor="#0A4480"
+            TextColor="White"
+            WidthRequest="120"
+            CornerRadius="15"/>
+        </StackLayout>
     </ScrollView>
-
 </ContentPage>

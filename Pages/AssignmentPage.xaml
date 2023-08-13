@@ -14,26 +14,37 @@
                    FontAttributes="Bold"
                    FontSize="Header"
                    Margin="50"
-                   TextColor="#0A4480"/>
+                   TextColor="#0A4480"
+                   FontFamily="Segoe UI"/>
 
             <Entry x:Name="SubjectEntry" 
                    Placeholder="Enter Subject" 
+                   PlaceholderColor="#0A4480"
                    HorizontalOptions="CenterAndExpand"
-                   WidthRequest="200"/>
+                   WidthRequest="200"
+                   BackgroundColor="Transparent"
+                   FontFamily="Segoe UI"
+                   TextColor="#0A4480"
+                   Margin="20"/>
 
-            <Frame BorderColor="LightGray" CornerRadius="10">
+            <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10">
                 <Editor Placeholder="Enter Description"
                         Margin="10"
-                        HeightRequest="100" />
+                        HeightRequest="100" 
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"
+                        PlaceholderColor="#0A4480"
+                        />
             </Frame>
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="CenterAndExpand"
                          Padding="10,5"
-                         Margin="10">
+                         Margin="20">
                 <Label Text="Due Date:"
                        VerticalTextAlignment="Center"
-                       TextColor="#0A4480" />
+                       TextColor="#0A4480" 
+                       FontFamily="Segoe UI"/>
 
                 <DatePicker x:Name="DueDatePicker"
                             HorizontalOptions="CenterAndExpand"
@@ -45,17 +56,20 @@
                     Clicked="OnClickAddAssignment"
                     HorizontalOptions="CenterAndExpand" 
                     BackgroundColor="#0A4480"
-                    TextColor="White"/>
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
 
-            <Label Text="Please select the assignment you wish to Delete in the Picker"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   TextColor="#0A4480"/>
-
-            <Frame BorderColor="LightGray" IsClippedToBounds="True">
+            <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" Margin="20">
                 <Picker x:Name="AssignmentCategoryPicker"
                         SelectedIndexChanged="AssignmentCategoryPicker_SelectedIndexChanged"
-                        HorizontalOptions="CenterAndExpand"/>
+                        HorizontalOptions="CenterAndExpand"
+                        FontFamily="Segoe UI"
+                        TextColor="#0A4480"         
+                        Title="Please select the assignment you wish to Delete"
+                        TitleColor="#0A4480"
+                        />
             </Frame>
 
             <Button x:Name="DeleteBtn"
@@ -63,7 +77,9 @@
                     Clicked="OnClickDeleteAssignment"
                     HorizontalOptions="CenterAndExpand" 
                     BackgroundColor="#0A4480"
-                    TextColor="White"/>
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

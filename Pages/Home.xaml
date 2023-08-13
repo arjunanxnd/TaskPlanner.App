@@ -3,11 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.Home"
              Title="Home">
+
+    <ContentPage.BackgroundColor>
+        <Color>#EAEAEA</Color>
+    </ContentPage.BackgroundColor>
+    
     <VerticalStackLayout>
         <Label
             Text="Home"
-            HorizontalOptions="CenterAndExpand"
-            FontSize="Header"/>
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="Header"
+            TextColor="#0A4480"
+            FontFamily="Segoe UI"/>
 
         <Button
             x:Name="LogOutBtn"
@@ -20,6 +28,13 @@
             x:Name="CheckBtn"
             Text="Check current user"
             Clicked="CheckBtn_Clicked"
+            HorizontalOptions="CenterAndExpand"
+            />
+
+        <Button
+            x:Name="ViewBtn"
+            Text="View"
+            Clicked="ViewBtn_Clicked"
             HorizontalOptions="CenterAndExpand"
             />
 
