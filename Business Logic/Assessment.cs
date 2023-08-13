@@ -7,18 +7,11 @@ using System.Threading.Tasks;
 
 namespace TaskPlanner.Business_Logic
 {
-    [JsonDerivedType(typeof(Assessment), typeDiscriminator: "Assessment")]
     public abstract class Assessment
     {
-        public Assessment()
-        {
-            Subject = "";
-            Description = "";
-            DueDate = DateTime.Now;
-        }
         public string Subject { get; set; }
         public string Description { get; set; }
-        public DateTime DueDate { get; set; }
+        public DateOnly DueDate { get; set; }
 
     }
 }

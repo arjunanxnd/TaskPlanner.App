@@ -8,18 +8,18 @@ namespace TaskPlanner.Business_Logic
 {
     public class Assignment : Assessment
     {
-        public Assignment()
-        {
-             
-        }
 
-        public Assignment(string subject, string description, DateTime dueDate)
+        public Assignment(string subject, string description, DateOnly dueDate)
         {
             Subject = subject;
             Description = description;
             DueDate = dueDate;
         }
 
+        public override string ToString()
+        {
+            return $"{Subject} - {Description} - {DueDate}";
+        }
 
     }
 
