@@ -8,18 +8,18 @@ namespace TaskPlanner.Business_Logic
 {
     public class User
     {
-        private List<Assignment> _assignments;
-        private List<Exam> _exams;
-        public List<General> _generals;
+        private List<Assignment>? _assignments;
+        private List<Exam>? _exams;
+        public List<General>? _generals;
 
         private string _password;
         private string _email;
 
-        public User(string userName, string firstAndLast, string email, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
+        public User(string userName, string firstAndLastName, string e_mail, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
         {
             UserName = userName;
-            FirstAndLastName = firstAndLast;
-            E_mail = email;
+            FirstAndLastName = firstAndLastName;
+            E_mail = e_mail;
             Password = password;
 
             exams = new List<Exam>();

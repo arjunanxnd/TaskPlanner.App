@@ -8,6 +8,11 @@ namespace TaskPlanner.Business_Logic
 {
     public class Assignment : Assessment
     {
+        public Assignment()
+        {
+             
+        }
+
         public Assignment(string subject, string description, DateTime dueDate)
         {
             Subject = subject;
@@ -15,10 +20,6 @@ namespace TaskPlanner.Business_Logic
             DueDate = dueDate;
         }
 
-        
-
-       
-        
 
     }
 
