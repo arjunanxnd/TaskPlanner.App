@@ -16,12 +16,8 @@ namespace TaskPlanner.Business_Logic
 
         public static int CurrentUID { get; set; }
 
-        public static int UserID { get; set; }
-
         public static void AddUser(User user)
         {
-            UserID++;
-            user.UserId = UserID;
             foreach (User _user in _users)
             {
                 if (user.UserName == _user.UserName)

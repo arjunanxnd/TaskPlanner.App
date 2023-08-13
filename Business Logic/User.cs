@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,38 +10,41 @@ namespace TaskPlanner.Business_Logic
 {
     public class User
     {
-        private List<Assignment>? _assignments;
-        private List<Exam>? _exams;
-        public List<General>? _generals;
+        private ObservableCollection<Assignment>? _assignments;
+        private ObservableCollection<Exam>? _exams;
+        public ObservableCollection<General>? _generals;
 
+
+        public int userId;
         private string _password;
         private string _email;
 
-        public User(int userId, string userName, string firstAndLastName, string e_mail, string password, List<Assignment> assignments, List<Exam> exams, List<General> generals)
+        public User(string userName, string firstAndLastName, string e_mail, string password, ObservableCollection<Assignment> assignments, ObservableCollection<Exam> exams, ObservableCollection<General> generals)
         {
-           UserId = userId;
+            UserID++;
+            userId = UserID;
             UserName = userName;
             FirstAndLastName = firstAndLastName;
             E_mail = e_mail;
             Password = password;
 
-            exams = new List<Exam>();
-            assignments = new List<Assignment>();
-            generals = new List<General>();
+            exams = new ObservableCollection<Exam>();
+            assignments = new ObservableCollection<Assignment>();
+            generals = new ObservableCollection<General>();
             _assignments = assignments;
             _exams = exams;
             _generals = generals;
         }
 
-        public int UserId { get; set; }
+        public static int UserID { get; set; }
         public string UserName { get; set; }
         public string FirstAndLastName { get; set; }
         public string Password { get { return _password; } set { _password = value; } }
         public string E_mail { get { return _email; } set { if (value.Contains("@gmail.com")) _email = value; else throw new Exception("Please enter a Gmail Email id"); } }
 
-        public List<Exam> ExamList { get { return _exams; }  }
-        public List<Assignment> AssignmentList { get { return _assignments; }  }
-        public List<General> GeneralList { get { return _generals; } }
+        public ObservableCollection<Exam> ExamList { get { return _exams; }  }
+        public ObservableCollection<Assignment> AssignmentList { get { return _assignments; }  }
+        public ObservableCollection<General> GeneralList { get { return _generals; } }
 
         
         //user
@@ -63,13 +67,13 @@ namespace TaskPlanner.Business_Logic
         {
             _assignments.Add(assignment);
         }
-        public void DeleteAssessment(Assignment assignment) 
+        public void DeleteAssignment(Assignment assignment)
         {
-            for (int i = 0; i < _assignments.Count(); i++)
+            foreach (Assignment existingAssignment in _assignments)
             {
-                if (_assignments[i] == assignment)
+                if (existingAssignment == assignment)
                 {
-                    _assignments.Remove(assignment);
+                    _assignments.Remove(existingAssignment);
                     break;
                 }
             }
@@ -82,9 +86,9 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteExam(Exam exam)
         {
-            for (int i=0;i<_exams.Count();i++)
+            foreach (Exam currentExam in _exams)
             {
-                if (_exams[i] == exam)
+                if (currentExam == exam)
                 {
                     _exams.Remove(exam);
                     break;
@@ -99,11 +103,11 @@ namespace TaskPlanner.Business_Logic
         }
         public void DeleteGeneral(General general)
         {
-            for (int i = 0; i < _exams.Count(); i++)
+            foreach (var existingGeneral in _generals.ToList())
             {
-                if (_generals[i] == general)
+                if (existingGeneral == general)
                 {
-                    _generals.Remove(general);
+                    _generals.Remove(existingGeneral);
                     break;
                 }
             }
@@ -111,7 +115,7 @@ namespace TaskPlanner.Business_Logic
 
         public override string ToString()
         {
-            return $"{UserName} || {UserId}";
+            return $"{UserName}";
         }
 
 
