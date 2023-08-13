@@ -4,12 +4,10 @@ using TaskPlanner.Data_Access;
 
 public partial class SignUpPage : ContentPage
 {
-    private UserRepository _repository;
     private User _user;
-    public SignUpPage(UserRepository repository)
-	{
-		InitializeComponent();
-        _repository = repository;
+    public SignUpPage()
+    {
+        InitializeComponent();
     }
 
     private async void ToPsswrdPgBtn_Clicked(System.Object sender, System.EventArgs e)
@@ -24,13 +22,13 @@ public partial class SignUpPage : ContentPage
             string password = await DisplayPromptAsync("Password", "Please remember your password!");
             if (string.IsNullOrEmpty(password)) throw new Exception("Password cannot be empty");
 
-            if (_repository.Users == null)
+            if (UserRepository.Users == null)
             {
                 _user = new User(0,uName, firstALast, email, password, null, null, null);
             }
-            if (_repository.Users != null)
+            if (UserRepository.Users != null)
             {
-                foreach (User user in _repository.Users)
+                foreach (User user in UserRepository.Users)
                 {
                     if (user.UserName == uName)
                         throw new Exception("This user name Exists\nTry using different one");
@@ -38,9 +36,8 @@ public partial class SignUpPage : ContentPage
                 _user = new User(0, uName, firstALast, email, password, null, null, null);
             }
 
-            _repository.AddUser(_user);
-            _repository.SaveUser(FilePath.JsonFilename);
-            if (_repository.Users.Count() >= 1)
+            UserRepository.Users.Add(_user);
+            if (UserRepository.Users.Count() >= 1)
             {
                 await DisplayAlert("Info", $"User {_user} added", "OK");
                 await Navigation.PopToRootAsync();
@@ -48,7 +45,8 @@ public partial class SignUpPage : ContentPage
             else
                 throw new Exception("User List did not populate");
 
-        }catch(Exception ex)
+        }
+        catch (Exception ex)
         {
             DisplayAlert("Error", $"{ex.Message}", "OK");
         }

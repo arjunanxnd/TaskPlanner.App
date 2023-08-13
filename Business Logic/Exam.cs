@@ -17,6 +17,11 @@ namespace TaskPlanner.Business_Logic
     {
         public ExamType Etype { get; set; }
 
+        public Exam()
+        {
+
+        }
+
         public Exam(string subject, string description, DateTime dueDate, ExamType exam)
         {
             Subject = subject;

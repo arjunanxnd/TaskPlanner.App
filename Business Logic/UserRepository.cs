@@ -10,21 +10,16 @@ using TaskPlanner.Data_Access;
 
 namespace TaskPlanner.Business_Logic
 {
-    public class UserRepository
+    public static class UserRepository
     {
-        List<User> _users;
-        public List<User> Users { get {  return _users; } set { _users = value; } }
+        private static List<User> _users = new List<User>();
+        public static List<User> Users { get { return _users; } }
 
-        public int UserID { get; set;}
-        
-        public UserRepository()
-        {
-            _users = new List<User>();
-            AddUser(new User(1,"Demo", "XYZ", "xyz@gmail.com", "Demo123",null,null,null));
-            SaveUser(FilePath.JsonFilename);
-        }
+        public static int CurrentUID { get; set; }
 
-        public void AddUser(User user)
+        public static int UserID { get; set; }
+
+        public static void AddUser(User user)
         {
             UserID++;
             user.UserId = UserID;
@@ -36,7 +31,7 @@ namespace TaskPlanner.Business_Logic
             _users.Add(user);
         }
 
-        public void DeleteUser(User user)
+        public static void DeleteUser(User user)
         {
             for (int i = 0; i < _users.Count(); i++)
             {
@@ -66,18 +61,15 @@ namespace TaskPlanner.Business_Logic
             }
         }
 
-        /*public List<User> LoadUsers(string filePath)
+        public List<User> LoadUsers(string filePath)
         {
             List<User> users = new List<User>();
-           
-            
-            using (FileStream reader = new FileStream(filePath, FileMode.OpenOrCreate))
+            using (FileStream reader = new FileStream(filePath, FileMode.Open))
             {
-                
                 users = JsonSerializer.Deserialize<List<User>>(reader);
             }
             return users;
-        }*/
+        }
 
     }
 }

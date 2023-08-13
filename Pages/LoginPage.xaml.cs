@@ -5,17 +5,10 @@ using TaskPlanner.Data_Access;
 
 public partial class LoginPage : ContentPage
 {
-    JSONDataManager _manager;
-    UserRepository _repository;
-    private string _fileName = "userData.json";
-
     public LoginPage()
-	{
-		InitializeComponent();
-        FilePath.JsonFilename = Path.Combine(FileSystem.Current.AppDataDirectory, _fileName);
-        _manager = new JSONDataManager();
-        _manager.JsonFile = FilePath.JsonFilename;
-        _repository = new UserRepository();
+    {
+        InitializeComponent();
+        UserRepository.AddUser(new User("Demo", "XYZ", "xyz@gmail.com", "Demo123", null, null, null));
     }
 
     private async void LoginBtn_Clicked(System.Object sender, System.EventArgs e)
@@ -26,19 +19,24 @@ public partial class LoginPage : ContentPage
             string pass = PasswordEntry.Text;
             if (string.IsNullOrEmpty(uName) && string.IsNullOrEmpty(pass))
                 throw new Exception("Please Enter full details to proceed");
+            if (string.IsNullOrEmpty(uName) || string.IsNullOrEmpty(pass))
+                throw new Exception("Please Enter full details to proceed");
 
-            foreach (User user in _repository.Users)
+
+            foreach (User user in UserRepository.Users)
             {
-                if (user.UserName != uName && user.Password != pass)
+                if (user.UserName == uName && user.Password == pass)
                 {
-                    continue;
+                    UserRepository.CurrentUID = user.UserId;
+                    await DisplayAlert("Welcome", $"{user.FirstAndLastName}", "OK");
+                    await Shell.Current.GoToAsync("////Home");
+                    Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+                    //App.Current.MainPage = new Home();
+                    break;
                 }
-                FilePath.CurrentUserId = user.UserId;
-                await DisplayAlert("Welcome", $"{user.FirstAndLastName}", "OK");
-                await Shell.Current.GoToAsync("///Home");
             }
         }
-        catch(TargetInvocationException er)
+        catch (TargetInvocationException er)
         {
             DisplayAlert("Error", $"{er.Message}", "OK");
 
@@ -52,7 +50,7 @@ public partial class LoginPage : ContentPage
     
     private async void SignUpLabel_Tapped(object sender, TappedEventArgs e)
     {
-        SignUpPage signUpPage = new SignUpPage(_repository);
+        SignUpPage signUpPage = new SignUpPage();
         await Navigation.PushAsync(signUpPage);
     }
 }
