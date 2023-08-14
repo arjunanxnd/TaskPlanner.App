@@ -38,7 +38,7 @@ public partial class SignUpPage : ContentPage
             UserRepository.Users.Add(_user);
             if (UserRepository.Users.Count() >= 1)
             {
-                await DisplayAlert("Info", $"User {_user} added", "OK");
+                await DisplayAlert("Info", $"Welcome {_user.FirstAndLastName}", "OK");
                 await Navigation.PopToRootAsync();
             }
             else

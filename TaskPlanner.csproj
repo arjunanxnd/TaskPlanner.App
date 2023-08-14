@@ -66,11 +66,21 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\" />
 	  <None Remove="Resources\Images\task.jpg" />
+	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\test.png" />
+	  <None Remove="Resources\Images\settings.png" />
+	  <None Remove="Resources\Images\clipboard.png" />
+	  <None Remove="Resources\Images\fitness.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Resources\Images\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\task.jpg" />
+	  <MauiImage Include="Resources\Images\test.png" />
+	  <MauiImage Include="Resources\Images\clipboard.png" />
+	  <MauiImage Include="Resources\Images\fitness.png" />
+	  <MauiImage Include="Resources\Images\home.png" />
+	  <MauiImage Include="Resources\Images\settings.png" />
 	</ItemGroup>
 </Project>

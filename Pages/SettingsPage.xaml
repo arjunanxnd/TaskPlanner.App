@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.SettingsPage"
@@ -29,49 +29,112 @@
             <Label Text="Update User Name" 
                    TextColor="#0A4480" 
                    FontFamily="Segoe UI"/>
+            <HorizontalStackLayout>
             <Entry x:Name="UserNameEntry" 
                    Placeholder="Enter New UserName" 
                    PlaceholderColor="Black"
                    FontFamily="Segoe UI"
                    TextColor="Black"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20" WidthRequest="275"/>
+            <Button
+                    x:Name="UpdateUserNameBtn"
+                    Text="Update"
+                    Clicked="UpdateUserNameBtn_Clicked"
+                    HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
+                </HorizontalStackLayout>
 
+            
             <Label Text="Update Name" 
                    TextColor="#0A4480" 
                    FontFamily="Segoe UI"/>
+            <HorizontalStackLayout>
             <Entry x:Name="NameEntry" 
                    Placeholder="Enter New Name" 
                    PlaceholderColor="Black"
                    FontFamily="Segoe UI"
                    TextColor="Black"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20" WidthRequest="275"/>
+                <Button
+                    x:Name="UpdateNamebtn"
+                    Text="Update"
+                    Clicked="Namebtn_Clicked"
+                    HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20" />
+                </HorizontalStackLayout>
 
             <Label Text="Update Password" 
                    TextColor="#0A4480"
                    FontFamily="Segoe UI"/>
+            <HorizontalStackLayout>
             <Entry x:Name="PasswordEntry" 
                    Placeholder="Enter New Password" 
                    IsPassword="True" 
                    PlaceholderColor="Black"
                    FontFamily="Segoe UI"
                    TextColor="Black"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20" WidthRequest="275"/>
+                <Button
+                    x:Name="UpdatePasswordBtn"
+                    Text="Update"
+                    Clicked="UpdatePasswordBtn_Clicked"
+                    HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
+                </HorizontalStackLayout>
 
             <Label Text="Update Email" 
                    TextColor="#0A4480" 
                    FontFamily="Segoe UI"/>
-            
+            <HorizontalStackLayout>
                 <Entry x:Name="EmailEntry" 
                    Placeholder="Enter New Email" 
                    PlaceholderColor="Black"
                    FontFamily="Segoe UI"
                    TextColor="Black"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20"
+                   WidthRequest="275"/>
+                <Button
+                    x:Name="UpdateUserEmailEntry"
+                    Text="Update"
+                    Clicked="UpdateUserEmailEntry_Clicked"
+                    HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#0A4480"
+                    TextColor="White"
+                    WidthRequest="120"
+                    CornerRadius="15"
+                    Margin="20"/>
+                </HorizontalStackLayout>
 
-            <RadioButton
-                
-                />
+            <HorizontalStackLayout>
+                <Label Text="Show Users Information"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Caption"
+                   TextColor="#707070"
+                   Margin="10,20"
+                   FontFamily="Segoe UI"/>
 
+                <Switch x:Name="UserSwitch"
+                    OnColor="#0A4480"
+                    ThumbColor="#707070"
+                    IsToggled="False"
+                    Toggled="UserSwitch_Toggled"/>
+
+
+            </HorizontalStackLayout>
+
+            
             <Label Text="Note: You can update one or more fields at a time. For eg: If you only want to update your password, just include the new password and leave other fields blank."
                    HorizontalOptions="CenterAndExpand"
                    FontSize="Caption"
@@ -80,16 +143,6 @@
                    FontFamily="Segoe UI"/>
 
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                <Button
-                    x:Name="UpdateBtn"
-                    Text="Update"
-                    Clicked="OnClickUpdate"
-                    HorizontalOptions="CenterAndExpand" 
-                    BackgroundColor="#0A4480"
-                    TextColor="White"
-                    WidthRequest="120"
-                    CornerRadius="15"
-                    Margin="20"/>
 
                 <Button
                     x:Name="LogOutBtn"

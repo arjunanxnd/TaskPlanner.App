@@ -46,6 +46,8 @@ public partial class ExamPage : ContentPage
                 DisplayAlert("Info", $"{exam} added", "OK");
             }
         }
+        SubjectEntry.Text="";
+        DescriptionEdt.Text="";
 
         ExamCategoryPicker.ItemsSource = null;
         ExamCategoryPicker.ItemsSource = _user.ExamList;

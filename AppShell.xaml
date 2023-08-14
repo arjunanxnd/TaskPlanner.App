@@ -11,7 +11,7 @@
         ContentTemplate="{DataTemplate local:LoginPage}"
         Route="LoginPage" FlyoutItemIsVisible="False"/>
 
-    <FlyoutItem Title="Home" FlyoutItemIsVisible="True">
+    <FlyoutItem Icon="home.png" Title="Home" FlyoutItemIsVisible="True">
         <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:Home}"
@@ -19,7 +19,7 @@
         />
     </FlyoutItem>
 
-    <FlyoutItem Title="Assignment" FlyoutItemIsVisible="True">
+    <FlyoutItem Icon="clipboard.png" Title="Assignment" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:AssignmentPage}"
@@ -27,7 +27,7 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="Exam" FlyoutItemIsVisible="True">
+    <FlyoutItem Icon="test.png" Title="Exam" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:ExamPage}"
@@ -35,7 +35,7 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="General" FlyoutItemIsVisible="True">
+    <FlyoutItem Icon="fitness.png" Title="General" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:GeneralPage}"
@@ -43,7 +43,7 @@
             />
     </FlyoutItem>
 
-    <FlyoutItem Title="Setting" FlyoutItemIsVisible="True">
+    <FlyoutItem Icon="settings.png" Title="Setting" FlyoutItemIsVisible="True">
         <ShellContent
             Title="Assignment"
             ContentTemplate="{DataTemplate local:SettingsPage}"

@@ -32,6 +32,8 @@ public partial class LoginPage : ContentPage
                     break;
                 }
             }
+            UserNameEntry.Text="";
+            PasswordEntry.Text="";
         }
         catch (TargetInvocationException er)
         {

@@ -33,7 +33,10 @@ public partial class GeneralPage : ContentPage
             _user.AddGeneral(general);
 
             DisplayAlert("Info", $"{general} added", "OK");
-            
+
+            TitleEntry.Text = "";
+            DescriptionEdt.Text = "";
+
             GeneralCategoryPicker.ItemsSource = null;
             GeneralCategoryPicker.ItemsSource = _user.GeneralList;
 

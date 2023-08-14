@@ -45,6 +45,9 @@ public partial class AssignmentPage : ContentPage
             _user.AddAssignment(assignment);
             DisplayAlert("Info", $"{assignment} added", "OK");
 
+            SubjectEntry.Text="";
+            DescriptionEdt.Text="";
+
             AssignmentCategoryPicker.ItemsSource = null;
             AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
 

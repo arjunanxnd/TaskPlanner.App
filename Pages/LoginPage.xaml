@@ -13,20 +13,14 @@
     <ScrollView>
         <StackLayout HorizontalOptions="CenterAndExpand" Padding="20" >
             <Label
-                Text="Hello Again!"
+                Text="Hello and Welcome!"
                 HorizontalOptions="Center"
                 FontAttributes="Bold"
-                FontSize="Header"
+                FontSize="25"
                 Margin="20"
                 TextColor="#0A4480" 
                 FontFamily="Segoe UI"/>
-            <Label
-                Text="Welcome back you've been missed!"
-                HorizontalOptions="Center"
-                FontAttributes="Bold"
-                FontSize="Subtitle"
-                TextColor="#0A4480" 
-                FontFamily="Segoe UI"/>
+            
             
                 <Image Source="task.jpg"
                    HeightRequest="200"
