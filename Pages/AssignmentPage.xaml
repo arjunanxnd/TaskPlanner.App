@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.AssignmentPage"
              xmlns:control="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar"
-             Title="AssignmentPage">
+             Title="Fridge Magnet">
 
     <ContentPage.BackgroundColor>
         <Color>#EAEAEA</Color>

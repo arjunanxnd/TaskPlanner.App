@@ -11,11 +11,12 @@
     </ContentPage.BackgroundColor>
     
     <VerticalStackLayout>
+        <Label Text=" " FontSize="20"/>
         <Label
             Text="Home"
             HorizontalOptions="Center"
             FontAttributes="Bold"
-            FontSize="Header"
+            FontSize="25"
             TextColor="#0A4480"
             FontFamily="Segoe UI"/>
 
@@ -23,7 +24,12 @@
             x:Name="LogOutBtn"
             Text="Log-out"
             Clicked="LogOutBtn_Clicked"
-            HorizontalOptions="EndAndExpand"
+            HorizontalOptions="End" 
+            BackgroundColor="#0A4480"
+            TextColor="White"
+            WidthRequest="120"
+            CornerRadius="15"
+            Margin="20"
             />
 
         <ListView                 
@@ -41,8 +47,12 @@
             x:Name="ViewBtn"
             Text="View"
             Clicked="ViewBtn_Clicked"
-            HorizontalOptions="CenterAndExpand"
-            />
+            HorizontalOptions="CenterAndExpand" 
+            BackgroundColor="#0A4480"
+            TextColor="White"
+            WidthRequest="120"
+            CornerRadius="15"
+            Margin="20"/>
 
         
 
