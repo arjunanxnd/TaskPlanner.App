@@ -15,7 +15,7 @@ public partial class AssignmentPage : ContentPage
 		InitializeComponent();
         BindingContext = this;
 	}
-    
+
     private void AssignmentCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
         foreach (User user in UserRepository.Users)
@@ -37,38 +37,22 @@ public partial class AssignmentPage : ContentPage
                     _user = user;
             }
 
-        string sub = SubjectEntry.Text;
-        string desccription = DescriptionEdt.Text;
-        DateTime dueDate = DueDatePicker.Date;
+            string sub = SubjectEntry.Text;
+            string desccription = DescriptionEdt.Text;
+            DateTime dueDate = DueDatePicker.Date;
 
             Assignment assignment = new Assignment(sub, desccription, dueDate);
             _user.AddAssignment(assignment);
-
-            //foreach (Assignment assignment1 in _user.AssignmentList)
-            //{
-            //    if (assignment1 == assignment)
-            //    {
-                    DisplayAlert("Info", $"{assignment} added", "OK");
-            //    }
-            //}
+            DisplayAlert("Info", $"{assignment} added", "OK");
 
             AssignmentCategoryPicker.ItemsSource = null;
             AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
+
         }
         catch (Exception ex)
         {
             DisplayAlert("Error", $"{ex}", "OK");
         }
-
-        Calendar.SelectedDates.Clear();
-
-        foreach (Assignment assignment2 in _user.AssignmentList)
-        {
-            Calendar.SelectedDates.Add(assignment.DueDate);
-        }
-
-        /*Calendar.SelectedDates.Clear();
-        Calendar.SelectedDates.Add(dueDate);*/
 
     }
 

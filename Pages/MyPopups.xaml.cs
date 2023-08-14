@@ -1,8 +1,9 @@
 ﻿namespace TaskPlanner.Pages;
 using TaskPlanner.Business_Logic;
 using System.Collections.ObjectModel;
+using CommunityToolkit.Maui.Views;
 
-public partial class MyPopups
+public partial class MyPopups:Popup
 {
 	public ObservableCollection<Exam> Exams { get; set; }
 	public ObservableCollection<Assignment> Assignments { get; set; }
@@ -26,7 +27,7 @@ public partial class MyPopups
             CurrentContent.Text = VarContents;
             ContentsView.ItemsSource = Assignments;
         }
-        if (VarContents == "EXAM")
+        if (VarContents == "EXAMS")
         {
             CurrentContent.Text = VarContents;
             ContentsView.ItemsSource = Exams;
