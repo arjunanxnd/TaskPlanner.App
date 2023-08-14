@@ -9,11 +9,11 @@ namespace TaskPlanner.Business_Logic
 {
     public class General
     {
-        public DateOnly WorkDate { get; set; }
+        public DateTime WorkDate { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public General(string title, string description,DateOnly workDate)
+        public General(string title, string description,DateTime workDate)
         {
             WorkDate = workDate;
             Title = title;
