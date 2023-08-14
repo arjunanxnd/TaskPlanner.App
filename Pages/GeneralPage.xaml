@@ -21,7 +21,10 @@
 
             <Frame BorderColor="Black" BackgroundColor="Transparent" CornerRadius="10"
        HeightRequest="400" WidthRequest="400">
-                <control:SfCalendar>
+                <control:SfCalendar 
+                    x:Name="Calendar"
+                    SelectionMode="Multiple"
+                    >
 
                 </control:SfCalendar>
             </Frame>
@@ -38,7 +41,8 @@
 
 
             <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" CornerRadius="10" WidthRequest="200">
-                <Editor Placeholder="Enter Description"
+                <Editor x:Name="DescriptionEdt"
+                    Placeholder="Enter Description"
                         Margin="10"
                         HeightRequest="100"
                         FontFamily="Segoe UI"
@@ -74,8 +78,8 @@
                 Margin="20"/>
 
             <Frame BorderColor="Black" BackgroundColor="Transparent" IsClippedToBounds="True" Margin="20" WidthRequest="220">
-                <Picker x:Name="ExamCategoryPicker"
-                        SelectedIndexChanged="ExamCategoryPicker_SelectedIndexChanged"
+                <Picker x:Name="GeneralCategoryPicker"
+                        SelectedIndexChanged="GeneralCategoryPicker_SelectedIndexChanged"
                         HorizontalOptions="CenterAndExpand"
                         FontFamily="Segoe UI"
                         TextColor="#0A4480"         

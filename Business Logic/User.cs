@@ -63,6 +63,11 @@ namespace TaskPlanner.Business_Logic
             user.FirstAndLastName = FAndL;
         }
 
+        public void UpdateEmail(User user,string email)
+        {
+            user.E_mail = email;
+        }
+
         public void AddAssignment(Assignment assignment) //Add assignment obj in the list
         {
             _assignments.Add(assignment);

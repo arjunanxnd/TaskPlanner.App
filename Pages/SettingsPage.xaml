@@ -67,8 +67,10 @@
                    FontFamily="Segoe UI"
                    TextColor="Black"
                    Margin="0,0,0,20"/>
-            
-            
+
+            <RadioButton
+                
+                />
 
             <Label Text="Note: You can update one or more fields at a time. For eg: If you only want to update your password, just include the new password and leave other fields blank."
                    HorizontalOptions="CenterAndExpand"

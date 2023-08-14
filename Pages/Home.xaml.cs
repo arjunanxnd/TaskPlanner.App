@@ -50,8 +50,6 @@ public partial class Home : ContentPage
             if (user.userId == UserRepository.CurrentUID)
                 _user = user;
         }
-        //DisplayAlert("Info", $"Current user is {_user}", "OK");
-
         MopupService.Instance.PushAsync(new MyPopups(StrAccess, CurrentAssignmentaList, CurrentExamList, CurrentGeneralList));
 
 

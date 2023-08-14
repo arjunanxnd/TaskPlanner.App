@@ -59,13 +59,10 @@ public partial class AssignmentPage : ContentPage
         {
             DisplayAlert("Error", $"{ex}", "OK");
         }
-
-        Calendar.SelectedDates.Clear();
-
-        foreach (Assignment assignment2 in _user.AssignmentList)
+        /*foreach (Assignment assignment2 in _user.AssignmentList)
         {
             Calendar.SelectedDates.Add(assignment.DueDate);
-        }
+        }*/
 
         /*Calendar.SelectedDates.Clear();
         Calendar.SelectedDates.Add(dueDate);*/
