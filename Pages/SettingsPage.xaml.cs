@@ -4,7 +4,6 @@ using TaskPlanner.Business_Logic;
 public partial class SettingsPage : ContentPage
 {
     User _user;
-    public User CurrentUser { get { return _user; } }
     public SettingsPage()
 	{
 		InitializeComponent();

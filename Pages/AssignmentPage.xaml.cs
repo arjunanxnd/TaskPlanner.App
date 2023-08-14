@@ -7,7 +7,6 @@ using TaskPlanner.Business_Logic;
 public partial class AssignmentPage : ContentPage
 {
     User _user;
-    public User CurrentUser { get { return _user; } }
     Assignment _selectedAssignment;
 
     public AssignmentPage()

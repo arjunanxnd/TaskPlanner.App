@@ -6,7 +6,6 @@ namespace TaskPlanner.Pages;
 public partial class GeneralPage : ContentPage
 {
     User _user;
-    public User CurrentUser { get { return _user; } }
     General _selectedGeneral;
     public GeneralPage()
 	{
