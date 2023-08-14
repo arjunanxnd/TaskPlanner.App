@@ -89,7 +89,7 @@
 
                 <Button x:Name="DeleteBtn"
                     Text="Delete"
-                    Clicked="OnClickDeleteAssignment"
+                    Clicked="DeleteBtn_Clicked"
                     HorizontalOptions="CenterAndExpand" 
                     BackgroundColor="#0A4480"
                     TextColor="White"

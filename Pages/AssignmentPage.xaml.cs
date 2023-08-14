@@ -63,19 +63,26 @@ public partial class AssignmentPage : ContentPage
 
     }
 
-    private void OnClickDeleteAssignment(object sender, EventArgs e)
+    void DeleteBtn_Clicked(System.Object sender, System.EventArgs e)
     {
+        try
+        {
+            foreach (User user in UserRepository.Users)
+            {
+                if (user.userId == UserRepository.CurrentUID)
+                    _user = user;
+            }
+            var copyAssignment = _selectedAssignment;
+            _user.DeleteAssignment(_selectedAssignment);
 
-    }
-
-    private void OnCalendarTapped(object sender, Syncfusion.Maui.Calendar.CalendarTappedEventArgs e)
-    {
-        
-    }
-
-    private void DueDatePicker_DateSelected(object sender, DateChangedEventArgs e)
-    {
-        
+            DisplayAlert("Info", $"{copyAssignment} Deleted", "OK");
+            AssignmentCategoryPicker.ItemsSource = null;
+            AssignmentCategoryPicker.ItemsSource = _user.AssignmentList;
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error", $"{ex}", "OK");
+        }
     }
 }
 

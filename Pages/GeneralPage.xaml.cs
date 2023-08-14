@@ -52,7 +52,24 @@ public partial class GeneralPage : ContentPage
    
     private void OnClickDelete(object sender, EventArgs e)
     {
+        try
+        {
+            foreach (User user in UserRepository.Users)
+            {
+                if (user.userId == UserRepository.CurrentUID)
+                    _user = user;
+            }
+            var copyGeneral = _selectedGeneral;
+            _user.DeleteGeneral(_selectedGeneral);
 
+            DisplayAlert("Info", $"{copyGeneral} Deleted", "OK");
+            GeneralCategoryPicker.ItemsSource = null;
+            GeneralCategoryPicker.ItemsSource = _user.GeneralList;
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error", $"{ex}", "OK");
+        }
     }
 
     private void GeneralCategoryPicker_SelectedIndexChanged(object sender, EventArgs e)

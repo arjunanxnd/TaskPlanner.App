@@ -62,10 +62,10 @@ public partial class ExamPage : ContentPage
                 if (user.userId == UserRepository.CurrentUID)
                     _user = user;
             }
-            var copyAssignment = _selectedExam;
+            var copyExam = _selectedExam;
             _user.DeleteExam(_selectedExam);
 
-            DisplayAlert("Info", $"{copyAssignment} Deleted", "OK");
+            DisplayAlert("Info", $"{copyExam} Deleted", "OK");
             ExamCategoryPicker.ItemsSource = null;
             ExamCategoryPicker.ItemsSource = _user.ExamList;
         }
