@@ -3,9 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
-using Mopups;
-using Mopups.Pages;
-using Mopups.Services;
+using CommunityToolkit.Maui.Views;
 
 namespace TaskPlanner.Pages;
 
@@ -50,7 +48,10 @@ public partial class Home : ContentPage
             if (user.userId == UserRepository.CurrentUID)
                 _user = user;
         }
-        MopupService.Instance.PushAsync(new MyPopups(StrAccess, CurrentAssignmentaList, CurrentExamList, CurrentGeneralList));
+        //DisplayAlert("Info", $"Current user is {_user}", "OK");
+
+        //MopupService.Instance.PushAsync(new MyPopups(StrAccess, CurrentAssignmentaList, CurrentExamList, CurrentGeneralList));
+        this.ShowPopup(new MyPopups(StrAccess, CurrentAssignmentaList, CurrentExamList, CurrentGeneralList));
 
 
     }
