@@ -30,8 +30,12 @@
                 x:Name="DisplayContent"
                 SelectedItem="{Binding StrAccess,Mode=TwoWay}"
                 ItemsSource="{Binding DisplayContents}">
-                
-            </ListView>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+
+        </ListView>
 
         <Button
             x:Name="ViewBtn"

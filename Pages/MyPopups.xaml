@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<popup:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             xmlns:popup="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="TaskPlanner.Pages.MyPopups"
-             Title="MyPopups">
+             >
     <VerticalStackLayout WidthRequest="250" HeightRequest="300" VerticalOptions="CenterAndExpand" BackgroundColor="#EAEAEA">
+        <Label Text="   " FontSize="20"/>
         <Label
             x:Name="CurrentContent"
             VerticalOptions="Center"
             HorizontalOptions="Center" />
+        <Label Text="   " FontSize="20"/>
+
 
         <ListView
             x:Name="ContentsView"
@@ -16,4 +19,4 @@
 
         </ListView>
     </VerticalStackLayout>
-</mopups:PopupPage>
+</popup:Popup>

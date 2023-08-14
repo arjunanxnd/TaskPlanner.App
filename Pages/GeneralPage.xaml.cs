@@ -29,10 +29,10 @@ public partial class GeneralPage : ContentPage
             string desccription = DescriptionEdt.Text;
             DateTime dueDate = DueDatePicker.Date;
 
-            Assignment assignment = new Assignment(title, desccription, dueDate);
-            _user.AddAssignment(assignment);
+            General general = new General(title, desccription, dueDate);
+            _user.AddGeneral(general);
 
-            DisplayAlert("Info", $"{assignment} added", "OK");
+            DisplayAlert("Info", $"{general} added", "OK");
             
             GeneralCategoryPicker.ItemsSource = null;
             GeneralCategoryPicker.ItemsSource = _user.AssignmentList;

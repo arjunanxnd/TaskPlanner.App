@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskPlanner.Pages.LoginPage"
-             Shell.BackgroundColor="Red"
               Title="">
     
     <ContentPage.BackgroundColor>
         <Color>#EAEAEA</Color>
     </ContentPage.BackgroundColor>
+    
+    
 
     <ScrollView>
         <StackLayout HorizontalOptions="CenterAndExpand" Padding="20" >
