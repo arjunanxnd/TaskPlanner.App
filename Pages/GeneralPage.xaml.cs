@@ -35,7 +35,7 @@ public partial class GeneralPage : ContentPage
             DisplayAlert("Info", $"{general} added", "OK");
             
             GeneralCategoryPicker.ItemsSource = null;
-            GeneralCategoryPicker.ItemsSource = _user.AssignmentList;
+            GeneralCategoryPicker.ItemsSource = _user.GeneralList;
 
             Calendar.SelectedDates.Clear();
             Calendar.SelectedDates.Add(dueDate);

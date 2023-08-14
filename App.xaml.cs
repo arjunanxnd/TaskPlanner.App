@@ -4,9 +4,16 @@ public partial class App : Application
 {
 	public App()
 	{
-		Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NGaF1cVWhAYVRpR2NbfE5xdV9DZlZUQ2YuP1ZhSXxQdk1iWn5bcHxXTmVVVEc=");
-		InitializeComponent(); 
-		
-        MainPage = new AppShell();
+		try
+		{
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NGaF1cWGhAYVJ0WmFZfV1gdVRMYlhbQH5PIiBoS35RdUVrWHxcc3ZRQmlbUEF0");
+			InitializeComponent();
+
+			MainPage = new AppShell();
+
+		}catch(Exception ex)
+		{
+			Console.WriteLine(ex.Message);
+		}
 	}
 }
